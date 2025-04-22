@@ -10,17 +10,20 @@
     <header>
         <h1>我的学习收藏</h1>
     </header>
-
+    <div class="tabs">
+    <button class="tab-link" onclick="showTab('blog-list')">博客</button>
+    <button class="tab-link" onclick="showTab('video-list')">视频</button>
+</div>
     <div class="container">
         <!-- 博客列表 -->
-        <div id="blog-list">
-            <h2 class="section-title">博客收藏</h2>
-        </div>
+        <div id="blog-list" class="tab-content">
+    <h2 class="section-title">博客收藏</h2>
+</div>
 
         <!-- 视频列表 -->
-        <div id="video-list">
-            <h2 class="section-title">视频收藏</h2>
-        </div>
+       <div id="video-list" class="tab-content">
+    <h2 class="section-title">视频收藏</h2>
+</div>
     </div>
 
     <script src="script.js"></script>
