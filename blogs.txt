@@ -1,0 +1,2 @@
+https://zhuanlan.zhihu.com/p/21800662|5G关键技术之波束成型|通俗解释波束成形的好处。
+https://juejin.cn/post/6844904034181003271|Transformer详解|一篇非常清晰的Transformer讲解。
