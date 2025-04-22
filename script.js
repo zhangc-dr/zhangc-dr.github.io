@@ -53,7 +53,7 @@
 
     // ✅ 页面加载时默认显示博客内容
     window.onload = function () {
-        loadTextFile('content.txt', 'blog-list', 'video-list');
+        loadTextFile('content.txt');
         showTab('blog-list'); // 默认显示博客
     };
 </script>
