@@ -20,12 +20,15 @@
                         const a = document.createElement('a');
                         a.href = url;
                         a.textContent = title;
+                        a.className = 'post-title';
                         a.target = '_blank';
 
                         const p = document.createElement('p');
                         p.textContent = description;
+                        p.className = 'post-content';
 
                         const div = document.createElement('div');
+                        div.className = 'post';
                         div.appendChild(a);
                         div.appendChild(p);
 
@@ -42,7 +45,6 @@
         }
     }
 
-    // ✅ 新增的部分：显示选中的 tab
     function showTab(tabId) {
         const tabs = document.querySelectorAll('.tab-content');
         tabs.forEach(tab => {
@@ -51,9 +53,8 @@
         document.getElementById(tabId).style.display = 'block';
     }
 
-    // ✅ 页面加载时默认显示博客内容
-    window.onload = function () {
-        loadTextFile('content.txt');
+    window.onload = async function () {
+        await loadTextFile('content.txt', 'blog-list', 'video-list');
         showTab('blog-list'); // 默认显示博客
     };
 </script>
