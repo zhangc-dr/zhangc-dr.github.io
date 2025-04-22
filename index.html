@@ -10,20 +10,39 @@
     <header>
         <h1>我的学习收藏</h1>
     </header>
+
+    <!-- 标签栏 -->
+    <div class="tabs">
+        <button class="tab-link" onclick="showContent('blogs')">博客</button>
+        <button class="tab-link" onclick="showContent('videos')">视频</button>
+    </div>
+
     <div class="container">
         <!-- 博客收藏 -->
-        <div>
+        <div id="blogs" class="tab-content">
             <h2 class="section-title">博客收藏</h2>
-            <div id="blog-list"></div>
+            <div class="post">
+                <div class="post-header">
+                    <a class="post-title" href="https://zhuanlan.zhihu.com/p/21800662" target="_blank">5G关键技术之波束成型</a>
+                    <span class="post-date">收藏日期: 2024-12-23</span>
+                </div>
+                <p class="post-content">用通俗的语言解释了波束成形的好处。</p>
+            </div>
         </div>
+
         <!-- 视频收藏 -->
-        <div>
+        <div id="videos" class="tab-content" style="display: none;">
             <h2 class="section-title">视频收藏</h2>
-            <div id="video-list"></div>
+            <div class="post">
+                <div class="post-header">
+                    <a class="post-title" href="https://www.youtube.com/watch?v=OAKAZhFmYoI&ab_channel=Hung-yiLee" target="_blank">Machine Learning: Hung-yi Lee's Lecture</a>
+                    <span class="post-date">收藏日期: 2025-04-22</span>
+                </div>
+                <p class="post-content">由Hung-yi Lee讲解的机器学习课程视频。</p>
+            </div>
         </div>
     </div>
 
-    <!-- 引入外部 JS 文件 -->
     <script src="script.js"></script>
 </body>
 </html>
