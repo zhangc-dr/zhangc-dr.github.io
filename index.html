@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的帖子收藏夹</title>
+    <title>我的学习收藏</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -24,6 +24,11 @@
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+        }
+        .section-title {
+            font-size: 1.5em;
+            color: #212529;
+            margin-bottom: 15px;
         }
         .post {
             padding: 15px;
@@ -54,24 +59,31 @@
 </head>
 <body>
     <header>
-        <h1>我的帖子收藏夹</h1>
+        <h1>我的学习收藏</h1>
     </header>
     <div class="container">
-        <div class="post">
-            <div class="post-header">
-                <a class="post-title" href="https://zhuanlan.zhihu.com/p/21800662" target="_blank">5G关键技术之波束成型</a>
-                <span class="post-date">收藏日期: 2024-12-23</span>
+        <!-- 博客收藏 -->
+        <div>
+            <h2 class="section-title">博客收藏</h2>
+            <div class="post">
+                <div class="post-header">
+                    <a class="post-title" href="https://zhuanlan.zhihu.com/p/21800662" target="_blank">5G关键技术之波束成型</a>
+                    <span class="post-date">收藏日期: 2024-12-23</span>
+                </div>
+                <p class="post-content">用通俗的语言解释了波束成形的好处。</p>
             </div>
-            <p class="post-content">用通俗的语言解释了波束成形的好处。</p>
         </div>
-        <div class="post">
-            <div class="post-header">
-                <a class="post-title" href="https://blog.csdn.net/weixin_39274659/article/details/89810132" target="_blank">混合波束成形|基础：深入浅出5G，毫米波，大规模MIMO与波束赋形</a>
-                <span class="post-date">收藏日期: 2024-12-23</span>
+        <!-- 视频收藏 -->
+        <div>
+            <h2 class="section-title">视频收藏</h2>
+            <div class="post">
+                <div class="post-header">
+                    <a class="post-title" href="https://www.youtube.com/watch?v=OAKAZhFmYoI&ab_channel=Hung-yiLee" target="_blank">Machine Learning: Hung-yi Lee's Lecture</a>
+                    <span class="post-date">收藏日期: 2025-04-22</span>
+                </div>
+                <p class="post-content">由Hung-yi Lee讲解的机器学习课程视频。</p>
             </div>
-            <p class="post-content">简单介绍了混合波束成形和数字波束、模拟波束成形的区别和优势。</p>
         </div>
-        <!-- 你可以在这里添加更多的帖子 -->
     </div>
 </body>
 </html>
