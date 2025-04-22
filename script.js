@@ -52,7 +52,7 @@
     }
 
     window.onload = function () {
-        loadTextFile('content.txt');
+        loadTextFile('content.txt', 'blog-list', 'video-list');
         showTab('blog-list');
     };
 </script>
