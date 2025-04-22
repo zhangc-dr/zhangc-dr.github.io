@@ -1,0 +1,4 @@
+blog|https://example.com/blog1|5G关键技术|这篇博客讨论了5G的关键技术及其发展趋势。
+video|https://example.com/video1|机器学习课程|这段视频讲解了机器学习的基础概念。
+blog|https://example.com/blog2|AI与未来|AI如何改变未来行业的分析。
+video|https://example.com/video2|深度学习介绍|本视频介绍了深度学习的核心概念。
