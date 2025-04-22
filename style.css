@@ -1,0 +1,90 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 30px auto;
+  background-color: white;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 6px;
+  background-color: #e9ecef;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tab.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+.section-title {
+  font-size: 1.5em;
+  color: #212529;
+  margin-bottom: 15px;
+}
+
+.post {
+  padding: 15px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.post:last-child {
+  border-bottom: none;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.post-title {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.post-title:hover {
+  text-decoration: underline;
+}
+
+.post-content,
+.post-date {
+  color: #495057;
+  font-size: 1em;
+  margin-top: 5px;
+}
