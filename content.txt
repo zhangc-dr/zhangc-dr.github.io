@@ -2,6 +2,6 @@ blog|https://zhuanlan.zhihu.com/p/699292617|PPO理解|知乎 绯红之刃。
 video|https://www.youtube.com/watch?v=OAKAZhFmYoI&ab_channel=Hung-yiLee|强化学习PPO|中国台湾 Hung-yi Lee 李宏毅。但依然存疑，1.为什么采用优势函数，为什么希望R这一项有正有负 2.为什么改写R
 blog|https://spinningup.openai.com/en/latest/algorithms/ppo.html|PPO原理|OpenAI对PPO的介绍。
 blog|https://www.cnblogs.com/GraphL/p/18655119|PPO介绍|收藏理由：清晰的逻辑结构来介绍PPO。
-video|https://www.bilibili.com/video/BV1iz421h7gb|PPO详细的公式推导|这个视频我刚开始看确实看不懂，但是看完李宏毅老师的视频之后，我自己试着梳理一遍，结果还是发现有很多漏洞，主要是逻辑上的漏洞，希望能在这个视频能弥补漏洞。注意1 10：52处一个弹幕解释的回报正负两种情况下如何确定概率的优化方向。注意2 11：35处UP说的根据状态和已有的网络如何获取动作的方式不是根据最大概率来获取的，而是采样，这部分我一直不清楚如何获取，一度以为和DQN、Qlearning相似。 注意3 12：16处解释了为什么要改写R。
+video|https://www.bilibili.com/video/BV1iz421h7gb|PPO详细的公式推导|这个视频我刚开始看确实看不懂，但是看完李宏毅老师的视频之后，我自己试着梳理一遍，结果还是发现有很多漏洞，主要是逻辑上的漏洞，希望回过头再来看能在这个视频能弥补漏洞。注意1 10：52处一个弹幕解释的回报正负两种情况下如何确定概率的优化方向。注意2 11：35处UP说的根据状态和已有的网络如何获取动作的方式不是根据最大概率来获取的，而是采样，这部分我一直不清楚如何获取，一度以为和DQN、Qlearning相似。 注意3 12：16处解释了为什么要改写R。
 blog|https://blog.csdn.net/qq_45889056/article/details/130297960|PPO 入门资料|弥补了我在GAE上漏洞。
 
