@@ -1,4 +1,4 @@
-blog|https://example.com/blog1|5G关键技术|这篇博客讨论了5G的关键技术及其发展趋势。
+blog|https://zhuanlan.zhihu.com/p/699292617|PPO理解|知乎 绯红之刃。
 video|https://www.youtube.com/watch?v=OAKAZhFmYoI&ab_channel=Hung-yiLee|强化学习PPO|中国台湾 Hung-yi Lee 李宏毅。
-blog|https://example.com/blog2|AI与未来|AI如何改变未来行业的分析。
-video|https://example.com/video2|深度学习介绍|本视频介绍了深度学习的核心概念。
+blog|https://spinningup.openai.com/en/latest/algorithms/ppo.html|PPO原理|OpenAI对PPO的介绍。
+
