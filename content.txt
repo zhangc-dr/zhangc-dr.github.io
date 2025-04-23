@@ -4,4 +4,4 @@ blog|https://spinningup.openai.com/en/latest/algorithms/ppo.html|PPO原理|OpenA
 blog|https://www.cnblogs.com/GraphL/p/18655119|PPO介绍|收藏理由：清晰的逻辑结构来介绍PPO。
 video|https://www.bilibili.com/video/BV1iz421h7gb|PPO详细的公式推导|这个视频我刚开始看确实看不懂，但是看完李宏毅老师的视频之后，我自己试着梳理一遍，结果还是发现有很多漏洞，主要是逻辑上的漏洞，希望回过头再来看能在这个视频能弥补漏洞。注意1 10：52处一个弹幕解释的回报正负两种情况下如何确定概率的优化方向。注意2 11：35处UP说的根据状态和已有的网络如何获取动作的方式不是根据最大概率来获取的，而是采样，这部分我一直不清楚如何获取，一度以为和DQN、Qlearning相似。 注意3 12：16处解释了为什么要改写R。
 blog|https://blog.csdn.net/qq_45889056/article/details/130297960|PPO 入门资料|弥补了我在GAE上漏洞。
-
+blog|https://spinningup.openai.com/en/latest/spinningup/rl_intro3.html|Open AI - Gradient Policy|仔细阅读了Part 3，发现在看完B站和李宏毅老师的讲解后仍然存在的漏洞都一一弥补了。在这个文档中详细介绍了为什么改写R? 为什么可以加baseline? 构造的优势函数最终巧合般的能用动作价值函数Q(st,at)代替改写的R、用价值函数V(st)代替b(st).
