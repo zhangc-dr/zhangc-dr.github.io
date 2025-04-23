@@ -1,4 +1,6 @@
 blog|https://zhuanlan.zhihu.com/p/699292617|PPO理解|知乎 绯红之刃。
 video|https://www.youtube.com/watch?v=OAKAZhFmYoI&ab_channel=Hung-yiLee|强化学习PPO|中国台湾 Hung-yi Lee 李宏毅。
 blog|https://spinningup.openai.com/en/latest/algorithms/ppo.html|PPO原理|OpenAI对PPO的介绍。
+blog|https://www.cnblogs.com/GraphL/p/18655119|PPO介绍|收藏理由：清晰的逻辑结构来介绍PPO。
+video|https://www.bilibili.com/video/BV1iz421h7gb|PPO详细的公式推导|这个视频我刚开始看确实看不懂，但是看完李宏毅老师的视频之后，我自己试着梳理一遍，结果还是发现有很多漏洞，主要是逻辑上的漏洞，希望能在这个视频能弥补漏洞。
 
