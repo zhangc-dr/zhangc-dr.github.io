@@ -9,3 +9,4 @@ blog|https://spinningup.openai.com/en/latest/spinningup/rl_intro.html|2025.4.25 
 blog|https://www.cnblogs.com/myleaf/p/18595876|2025.4.24 个人博客 PPO原理详细讲解+代码详细讲解|这个博客是个人博客，详细介绍了PPO。从这个博客中学到了python可以实现进度条的代码实现。原理部分主要是参考了李宏毅老师。
 blog|https://huggingface.co/learn/deep-rl-course/unit8/introduction|2025.4.25 强化学习课程Doc|我刚开始看。
 video|https://www.youtube.com/watch?v=BvZvx7ENZBw&list=PLD80i8An1OEHhcxclwq8jOMam0m0M9dQ_&index=3&ab_channel=Weights%26Biases|2025.4.25 PPO代码实现|视频分为三部分，Part1注意介绍了离散动作的PPO代码实现，Part3介绍了如何把离散动作PPO代码转换成连续动作PPO。  而且在视频6:50处UP讲到了连续动作边界如何限制的问题，他说的是可以在环境中进行限制，但好像和在网络输出进行限制没什么区别。
+blog|https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/|2025.4.25 PPO写代码时候需要注意的地方|还没看
