@@ -7,3 +7,4 @@ blog|https://proceedings.mlr.press/v32/silver14.pdf|2025.4.25 Paper： Determini
 blog|https://arxiv.org/abs/1506.02438|2025.4.25 Paper：High-Dimensional Continuous Control Using Generalized Advantage Estimation|这篇文章严格给出了GAE(广义优势函数估计)的定义，给出了怎么一步步选择了用GAE的分析。
 blog|https://spinningup.openai.com/en/latest/spinningup/rl_intro.html|2025.4.25 Doc: Policy Gradient|这是OpenAI写的关于策略梯度的一个文档，初学的时候很适合看，主要看Part1 Part2 Part3这三个部分的内容，这三部分清晰的梳理了怎么一步步实现策略梯度更新的。   仔细阅读了Part 3，发现在看完B站和李宏毅老师的讲解后仍然存在的漏洞都一一弥补了。在这个文档中详细介绍了为什么改写R? 为什么可以加baseline? 构造的优势函数最终巧合般的能用动作价值函数Q(st,at)代替改写的R、用价值函数V(st)代替b(st).
 blog|https://www.cnblogs.com/myleaf/p/18595876|2025.4.24 个人博客 PPO原理详细讲解+代码详细讲解|这个博客是个人博客，详细介绍了PPO。从这个博客中学到了python可以实现进度条的代码实现。原理部分主要是参考了李宏毅老师。
+blog|https://huggingface.co/learn/deep-rl-course/unit8/introduction|2025.4.25 强化学习课程Doc|我刚开始看。
