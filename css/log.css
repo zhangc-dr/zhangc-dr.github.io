@@ -1,0 +1,150 @@
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8fbff;
+    color: #333;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  
+  /* 链接样式 */
+  a {
+    color: #1e88e5;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  a:hover {
+    color: #1565c0;
+    text-decoration: underline;
+  }
+  
+  /* 顶部导航栏 */
+  header {
+    background-color: #ffffff;
+    padding: 16px 0;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  }
+  
+  /* 导航栏内容 */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .navbar .logo {
+    font-size: 2em;
+    color: #1e88e5;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 24px;
+  }
+  
+  nav ul li {
+    list-style: none;
+  }
+  
+  nav ul li a {
+    font-weight: 600;
+    font-size: 1em;
+    transition: color 0.2s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #1565c0;
+  }
+  
+  /* 日志主体部分 */
+  .log-content {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+  }
+  
+  .log-content h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: #1e88e5;
+    text-align: center;
+  }
+  
+  /* 每条日志 */
+  .log-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  }
+  
+  .log-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .log-item h3 {
+    color: #1565c0;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+  
+  .log-item p {
+    margin: 8px 0 12px;
+  }
+  
+  .log-item ul {
+    margin: 12px 0 0 24px;
+  }
+  
+  .log-item ul li {
+    list-style-type: disc;
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  /* 页脚 */
+  footer {
+    text-align: center;
+    font-size: 0.9em;
+    padding: 40px 20px;
+    color: #777;
+    margin-top: 60px;
+  }
+  
+  /* 响应式适配 */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .log-content {
+      padding: 0 16px;
+    }
+  
+    .log-item {
+      padding: 20px;
+    }
+  }
+  

@@ -1,0 +1,91 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #007bff91;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header nav {
+    margin-top: 10px;
+  }
+  
+  header nav a {
+    margin: 0 15px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  header nav a:hover,
+  header nav .active {
+    text-decoration: underline;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  .intro-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ccc;
+    object-fit: cover;
+  }
+  
+  .focus-area h2 {
+    color: #007BFF;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .skills {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .skills li {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+    transition: transform 0.2s;
+    text-align: center;
+  }
+  
+  .skills li:hover {
+    transform: translateY(-5px);
+  }
+  
+  footer {
+    background-color: #007bff91;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+  }
+  
