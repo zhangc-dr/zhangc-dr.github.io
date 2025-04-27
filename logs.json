@@ -86,7 +86,6 @@
       "link": "https://gymnasium.farama.org/introduction/create_custom_env/",
       "title": "gym库教我们怎么基于gym搭建一个环境",
       "content": "尽管我目前不会去搭这种环境，但是他提供了一个规范的模板可以参考。"
-    },
-    
+    }
   ]
 }
