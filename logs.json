@@ -91,18 +91,18 @@
       "date": "2025.4.27",
       "type": "blog",
       "link": "https://stable-baselines3.readthedocs.io/en/master/common/distributions.html",
-      "title": "这是一个强化学习教程，不过还没仔细看过。我正在寻找高斯分布是否是PPO算法求解连续动作空间有效方法的有关论证。幸运的是，找到了一篇文章说了用离散动作空间去近似连续动作空间，然后再用离散动作空间的求解方法去求，网络就用softmax（这篇文章叫Discretizing Continuous Action Space for On-Policy Optimization，在ToolBook/PAPER文件夹中）。但是不幸的是，还没有找到高斯分布的替代分布。"
+      "title": "这是一个强化学习教程，不过还没仔细看过。我正在寻找高斯分布是否是PPO算法求解连续动作空间有效方法的有关论证。幸运的是，找到了一篇文章说了用离散动作空间去近似连续动作空间，然后再用离散动作空间的求解方法去求，网络就用softmax（这篇文章叫Discretizing Continuous Action Space for On-Policy Optimization，在ToolBook/PAPER文件夹中）。但是不幸的是，还没有找到高斯分布的替代分布。",
     },
     {
       "date": "2025.4.27",
       "type": "blog",
       "link": "https://medium.com/geekculture/policy-based-methods-for-a-continuous-action-space-7b5ecffac43a",
-      "title": "连续动作空间 PPO求解"
-      "content":"这个博客是作者做完离散PPO，现在来尝试连续PPO写下的博客。还没看，这是我在探索PPO求解连续动作空间问题时候找到的一篇博客。希望有所帮助。这个博主应该很有意思。"
+      "title": "连续动作空间 PPO求解",
+      "content":"这个博客是作者做完离散PPO，现在来尝试连续PPO写下的博客。还没看，这是我在探索PPO求解连续动作空间问题时候找到的一篇博客。希望有所帮助。这个博主应该很有意思。",
       "notes": [
-        "文中提到这么一句话，提到了为什么基于价值的RL不适合用来求解连续动作空间。One of the advantages of a policy-based method is the ability to deal with large or even continuous action spaces. When we are doing Q-Learning methods, the agent learns the Q value for each action in a state and builds an optimal policy by picking the action that gives the highest Q value. While this may work for some environments, this only works with a discrete action space as there is an infinite number of actions in a range of continuous values."，
-        "文中提到了稀疏奖励问题，但没看出来他具体怎么解决的，或许是没看仔细。"，
-        "文中还给出了一个和一篇文章相反的结论，在这个博客中博主得出了连续PPO强于离散PPO，令我手足无措！"
+        "文中提到这么一句话，提到了为什么基于价值的RL不适合用来求解连续动作空间。One of the advantages of a policy-based method is the ability to deal with large or even continuous action spaces. When we are doing Q-Learning methods, the agent learns the Q value for each action in a state and builds an optimal policy by picking the action that gives the highest Q value. While this may work for some environments, this only works with a discrete action space as there is an infinite number of actions in a range of continuous values.",
+        "文中提到了稀疏奖励问题，但没看出来他具体怎么解决的，或许是没看仔细。",
+        "文中还给出了一个和一篇文章相反的结论，在这个博客中博主得出了连续PPO强于离散PPO，令我手足无措！",
       ]
     }
   ]
