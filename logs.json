@@ -87,13 +87,6 @@
       "title": "gym库教我们怎么基于gym搭建一个环境",
       "content": "尽管我目前不会去搭这种环境，但是他提供了一个规范的模板可以参考。"
     },
-    {
-      "date": "2025.4.27",
-      "type": "blog",
-      "link": "https://stable-baselines3.readthedocs.io/en/master/common/distributions.html",
-      "title": "PPO",
-      "content": "这是一个强化学习教程，不过还没仔细看过。我正在寻找高斯分布是否是PPO算法求解连续动作空间有效方法的有关论证。幸运的是，找到了一篇文章说了用离散动作空间去近似连续动作空间，然后再用离散动作空间的求解方法去求，网络就用softmax（这篇文章叫Discretizing Continuous Action Space for On-Policy Optimization，在ToolBook/PAPER文件夹中）。但是不幸的是，还没有找到高斯分布的替代分布。",
-    },
     
   ]
 }
