@@ -118,7 +118,8 @@
       "notes": [
         "TD3 trains a deterministic policy in an off-policy way. Because the policy is deterministic, if the agent were to explore on-policy, in the beginning it would probably not try a wide enough variety of actions to find useful learning signals. 这句话不太理解。为什么说TD3采用off policy的方式训练，但是在探索的时候又采用on-policy方式。",
         "To make TD3 policies explore better, we add noise to their actions at training time, typically uncorrelated mean-zero Gaussian noise. To facilitate getting higher-quality training data, you may reduce the scale of the noise over the course of training. 这段文字明确告诉我TD3和DDPG一样为了获得很好的探索效果，在训练阶段要给动作输出加一个噪声，然后明确提到随着训练的进行，要把噪声逐渐减小。",
-        "At test time, to see how well the policy exploits what it has learned, we do not add noise to the actions. 这句话明确提到在测试阶段，要把噪声去掉。"
+        "At test time, to see how well the policy exploits what it has learned, we do not add noise to the actions. 这句话明确提到在测试阶段，要把噪声去掉。",
+        "Our TD3 implementation uses a trick to improve exploration at the start of training. For a fixed number of steps at the beginning (set with the start_steps keyword argument), the agent takes actions which are sampled from a uniform random distribution over valid actions. After that, it returns to normal TD3 exploration. 这段文字提到了作者训练TD3的一个技巧-初期动作的选择不需要智能体的参与，而是从动作空间去均匀采样，当训练一定步数之后，再开启智能体的训练。"
       ]
     }
   ]
