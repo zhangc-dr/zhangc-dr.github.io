@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>附录 | 数学公式展示</title>
+  <link rel="stylesheet" href="css/appendix.css" />
+  <!-- 引入 MathJax -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>📘 附录：数学公式展示</h1>
+      <nav class="navbar">
+        <a href="index.html">首页</a>
+        <a href="log.html">学习日志</a>
+        <a href="about.html">关于我</a>
+        <a href="appendix.html" class="active">附录</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="formula-container" class="main container">
+    <!-- 数学公式会在这里动态加载 -->
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 by zc | GitHub Pages</p>
+  </footer>
+
+  <script>
+    // 加载并渲染公式
+    fetch('data/formulas.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('formula-container');
+        data.forEach(section => {
+          const sec = document.createElement('section');
+
+          const h2 = document.createElement('h2');
+          h2.textContent = section.title;
+          sec.appendChild(h2);
+
+          if (section.description) {
+            const p = document.createElement('p');
+            p.textContent = section.description;
+            sec.appendChild(p);
+          }
+
+          section.formulas.forEach(formula => {
+            const p = document.createElement('p');
+            p.innerHTML = `$$${formula}$$`; // 块级公式
+            sec.appendChild(p);
+          });
+
+          container.appendChild(sec);
+        });
+
+        // 重新渲染 MathJax 公式
+        if (window.MathJax) {
+          MathJax.typesetPromise();
+        }
+      })
+      .catch(error => {
+        console.error('加载公式数据失败：', error);
+      });
+  </script>
+</body>
+</html>

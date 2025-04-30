@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日志详情</title>
+  <link rel="stylesheet" href="css/logDetail.css">
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">日志内容</div>
+    </div>
+  </header>
+
+  <div class="log-detail-content" id="log-detail-content">
+    <div class="back-button-container">
+        <button class="back-button" onclick="window.history.back()">
+          <span class="arrow">←</span> 返回
+        </button>
+    </div>
+      
+      
+    <!-- 详细内容会通过 JS 动态加载 -->
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Your Company. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // 从 URL 中提取 `id` 参数
+    const urlParams = new URLSearchParams(window.location.search);
+    const logId = urlParams.get('id');
+
+    if (logId) {
+      fetch('data/logs.json')
+        .then(response => response.json())
+        .then(data => {
+          const log = data.logs.find(log => log.id === parseInt(logId));
+
+          if (log) {
+            const logDetailContent = document.getElementById('log-detail-content');
+
+            const logHeader = document.createElement('div');
+            logHeader.classList.add('log-header');
+
+            const logDate = document.createElement('h3');
+            logDate.textContent = `📅 ${log.date}`;
+            logHeader.appendChild(logDate);
+
+            const logTypeTitle = document.createElement('p');
+            logTypeTitle.innerHTML = `<strong>${log.type}：</strong><a href="${log.link}" target="_blank">${log.title}</a>`;
+            logHeader.appendChild(logTypeTitle);
+
+            const logContentText = document.createElement('p');
+            logContentText.textContent = log.content;
+            logHeader.appendChild(logContentText);
+
+            logDetailContent.appendChild(logHeader);
+
+            // 显示额外的内容
+            if (log.questions) {
+              const questionsTitle = document.createElement('h4');
+              questionsTitle.textContent = "问题";
+              logDetailContent.appendChild(questionsTitle);
+
+              const questionList = document.createElement('ul');
+              log.questions.forEach(q => {
+                const li = document.createElement('li');
+                li.textContent = q;
+                questionList.appendChild(li);
+              });
+              logDetailContent.appendChild(questionList);
+            }
+
+            if (log.notes) {
+              const notesTitle = document.createElement('h4');
+              notesTitle.textContent = "笔记";
+              logDetailContent.appendChild(notesTitle);
+
+              const noteList = document.createElement('ul');
+              log.notes.forEach(n => {
+                const li = document.createElement('li');
+                li.textContent = n;
+                noteList.appendChild(li);
+              });
+              logDetailContent.appendChild(noteList);
+            }
+          } else {
+            // 如果找不到对应的日志ID，显示错误信息
+            document.getElementById('log-detail-content').textContent = '日志未找到。';
+          }
+        })
+        .catch(error => {
+          console.error('加载日志详情失败：', error);
+        });
+    }
+  </script>
+</body>
+
+</html>
