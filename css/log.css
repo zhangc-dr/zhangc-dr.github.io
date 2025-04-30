@@ -1,150 +1,264 @@
-/* 基础样式 */
+/* 基本重置样式 */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f8fbff;
-    color: #333;
-    line-height: 1.7;
-    font-size: 16px;
-  }
-  
-  /* 链接样式 */
-  a {
-    color: #1e88e5;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-  
-  a:hover {
-    color: #1565c0;
-    text-decoration: underline;
-  }
-  
-  /* 顶部导航栏 */
-  header {
-    background-color: #ffffff;
-    padding: 16px 0;
-    border-bottom: 1px solid #e0e0e0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-  }
-  
-  /* 导航栏内容 */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .navbar .logo {
-    font-size: 2em;
-    color: #1e88e5;
-    font-weight: bold;
-  }
-  
-  nav ul {
-    display: flex;
-    gap: 24px;
-  }
-  
-  nav ul li {
-    list-style: none;
-  }
-  
-  nav ul li a {
-    font-weight: 600;
-    font-size: 1em;
-    transition: color 0.2s ease;
-  }
-  
-  nav ul li a:hover {
-    color: #1565c0;
-  }
-  
-  /* 日志主体部分 */
-  .log-content {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
-  }
-  
-  .log-content h2 {
-    font-size: 2em;
-    margin-bottom: 40px;
-    color: #1e88e5;
-    text-align: center;
-  }
-  
-  /* 每条日志 */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+a {
+  color: #1e88e5;
+  text-decoration: none;
+}
+
+/* 时间线容器 */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 每个时间节点的卡片容器 */
+.timeline-items {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* 控制左右错开排列的方式 */
+}
+
+.log-item {
+  position: relative;
+  background-color: #fff;
+  border-radius: 12px;
+  margin-bottom: -30px; /* 增加上下卡片之间的间距 */
+  padding: 20px;
+  width: 48%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  transform-origin: center center; /* 让卡片围绕中心点旋转 */
+}
+
+/* 左卡片 */
+.left-card {
+  margin-right: 50%;  /* 左卡片右侧增加更大的间距 */
+  margin-top: -30px;
+  border-left: 4px solid #1e88e5;
+  transform: rotate(-5deg); /* 左卡片倾斜 */
+  transition: transform 0.3s ease;
+}
+
+/* 右卡片 */
+.right-card {
+  margin-left: 50%;  /* 右卡片左侧增加更大的间距 */
+  margin-top: -30px;
+  border-right: 4px solid #1e88e5;
+  transform: rotate(5deg); /* 右卡片倾斜 */
+  transition: transform 0.3s ease;
+}
+
+/* 卡片悬浮效果 */
+.log-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 时间线节点圆点 */
+.log-item::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: #1e88e5;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+/* 每个卡片的时间和标题样式 */
+.log-header {
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 15px;
+}
+
+.log-header h3 {
+  font-size: 1.4em;
+  color: #1565c0;
+}
+
+.log-header p {
+  font-size: 1.1em;
+  color: #333;
+}
+
+.log-header p strong {
+  color: #1e88e5;
+}
+
+/* 清除浮动 */
+.timeline-items::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* 使内容在小屏幕上更适配 */
+@media (max-width: 768px) {
   .log-item {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    width: 100%;
+    margin-bottom: 15px;
   }
-  
-  .log-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  .timeline::before {
+    left: 30px;
   }
-  
-  .log-item h3 {
-    color: #1565c0;
-    font-size: 1.4em;
-    margin-bottom: 10px;
+}
+/* 时间线中心线 */
+
+/* 时间线圆点美化 */
+.log-item::before {
+  z-index: 2;
+  animation: pulse 2s infinite;
+}
+
+/* 时间线圆点动画效果 */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(30, 136, 229, 0.5);
   }
-  
-  .log-item p {
-    margin: 8px 0 12px;
+  70% {
+    box-shadow: 0 0 0 10px rgba(30, 136, 229, 0);
   }
-  
-  .log-item ul {
-    margin: 12px 0 0 24px;
+  100% {
+    box-shadow: 0 0 0 0 rgba(30, 136, 229, 0);
   }
-  
-  .log-item ul li {
-    list-style-type: disc;
-    margin-bottom: 8px;
-    color: #555;
+}
+
+
+/* 每条日志的年份样式（可放在卡片内部或上方） */
+.log-year {
+  font-size: 1.1em;
+  color: #999;
+  margin-bottom: 5px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* 页脚（如果有） */
+footer {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #888;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+}
+
+/* 移动端时间线线位置与卡片位置调整 */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 10px;
   }
-  
-  /* 页脚 */
-  footer {
-    text-align: center;
-    font-size: 0.9em;
-    padding: 40px 20px;
-    color: #777;
-    margin-top: 60px;
+
+  .log-item {
+    width: 90%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    transform: rotate(0deg); /* 取消旋转方便阅读 */
   }
-  
-  /* 响应式适配 */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      gap: 12px;
-    }
-  
-    nav ul {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .log-content {
-      padding: 0 16px;
-    }
-  
-    .log-item {
-      padding: 20px;
-    }
+
+  .left-card,
+  .right-card {
+    margin-top: 10px;
+    border-left: 4px solid #1e88e5;
+    border-right: none;
   }
-  
+
+  .log-item::before {
+    left: -10px;
+  }
+}
+/* 顶部导航栏 */
+.navbar {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* 网站 logo */
+.navbar .logo {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #1e88e5;
+  cursor: pointer;
+}
+
+/* 导航菜单 */
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar nav ul li a {
+  font-size: 1em;
+  color: #333;
+  padding: 6px 10px;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar nav ul li a:hover,
+.navbar nav ul li a.active {
+  color: #1e88e5;
+  border-bottom: 2px solid #1e88e5;
+}
+
+/* 响应式导航：小屏改为纵向 */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .navbar nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .navbar nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+}
