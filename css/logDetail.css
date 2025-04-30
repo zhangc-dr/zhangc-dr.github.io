@@ -1,0 +1,187 @@
+/* Reset 默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8fbff;
+    color: #333;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  
+  /* 超链接基础样式 */
+  a {
+    color: #1e88e5;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* 顶部导航栏 */
+  header {
+    background-color: #fff;
+    padding: 16px 0;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  }
+  
+  .navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #1e88e5;
+  }
+  
+  /* 主体内容区域 */
+  .log-detail-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 32px 24px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  }
+  
+  /* 返回按钮样式 */
+  .back-button-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+  }
+  
+  .back-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #4fc3f7, #1e88e5);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(30, 136, 229, 0.4);
+  }
+  
+  .back-button .arrow {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+  
+  .back-button::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent 70%);
+    animation: shine 2.5s linear infinite;
+    z-index: 0;
+  }
+  
+  .back-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(30, 136, 229, 0.6);
+  }
+  
+  .back-button:hover .arrow {
+    transform: translateX(-4px);
+  }
+  
+  .back-button span,
+  .back-button::before {
+    z-index: 1;
+  }
+  
+  @keyframes shine {
+    0% {
+      transform: rotate(0deg) translate(0, 0);
+    }
+    100% {
+      transform: rotate(360deg) translate(0, 0);
+    }
+  }
+  
+  
+  
+  
+  /* 日志头部样式 */
+  .log-header h3 {
+    font-size: 1.5em;
+    color: #1565c0;
+    margin-bottom: 12px;
+  }
+  
+  .log-header p {
+    font-size: 1.1em;
+    margin-top: 10px;
+    color: #444;
+  }
+  
+  .log-header p strong {
+    color: #1e88e5;
+    margin-right: 6px;
+  }
+  
+  /* 问题 / 笔记 区块 */
+  h4 {
+    font-size: 1.25em;
+    margin-top: 30px;
+    margin-bottom: 14px;
+    color: #1565c0;
+    border-left: 4px solid #1565c0;
+    padding-left: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  ul li {
+    padding-left: 24px;
+    position: relative;
+    margin-bottom: 12px;
+    color: #555;
+  }
+  
+  ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1e88e5;
+    font-size: 1.2em;
+    line-height: 1;
+  }
+  
+  /* 页脚 */
+  footer {
+    text-align: center;
+    font-size: 0.9em;
+    padding: 20px;
+    color: #777;
+    background-color: #f1f1f1;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 60px;
+  }
+  
