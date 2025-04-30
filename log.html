@@ -1,10 +1,11 @@
+<!-- log.html -->
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>学习日志</title>
-  <link rel="stylesheet" href="css/log.css">
+  <link rel="stylesheet" href="css/log.css" />
 </head>
 <body>
   <header>
@@ -13,77 +14,23 @@
       <nav>
         <ul>
           <li><a href="index.html">首页</a></li>
-          <li><a href="log.html">学习日志</a></li>
+          <li><a href="log.html" class="active">学习日志</a></li>
           <li><a href="about.html">关于我</a></li>
+          <li><a href="appendix.html">附录</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section class="log-content" id="log-content">
-    <!-- 日志项会通过JavaScript动态加载 -->
+  <!-- 时间线式布局 -->
+  <section class="timeline" id="log-content">
+    <!-- 日志项由 log.js 动态插入 -->
   </section>
 
   <footer>
     <p>&copy; 2025 个人学习日志 - All rights reserved</p>
   </footer>
 
-  <script>
-    // 使用 fetch 获取 logs.json 文件的数据
-    fetch('logs.json')
-      .then(response => response.json())
-      .then(data => {
-        const logContent = document.getElementById('log-content');
-
-        // 遍历日志数组，并动态生成 HTML
-        data.logs.forEach(log => {
-          const logItem = document.createElement('div');
-          logItem.classList.add('log-item');
-
-          // 日志日期
-          const logDate = document.createElement('h3');
-          logDate.textContent = `📅 ${log.date}`;
-          logItem.appendChild(logDate);
-
-          // 日志类型和标题链接
-          const logType = document.createElement('p');
-          logType.innerHTML = `<strong>${log.type}：</strong><a href="${log.link}" target="_blank">${log.title}</a>`;
-          logItem.appendChild(logType);
-
-          // 日志内容
-          const logContentText = document.createElement('p');
-          logContentText.textContent = log.content;
-          logItem.appendChild(logContentText);
-
-          // 日志问题（如果有）
-          if (log.questions) {
-            const questionList = document.createElement('ul');
-            log.questions.forEach(question => {
-              const questionItem = document.createElement('li');
-              questionItem.textContent = question;
-              questionList.appendChild(questionItem);
-            });
-            logItem.appendChild(questionList);
-          }
-
-          // 日志笔记（如果有）
-          if (log.notes) {
-            const noteList = document.createElement('ul');
-            log.notes.forEach(note => {
-              const noteItem = document.createElement('li');
-              noteItem.textContent = note;
-              noteList.appendChild(noteItem);
-            });
-            logItem.appendChild(noteList);
-          }
-
-          // 将日志项添加到日志内容区
-          logContent.appendChild(logItem);
-        });
-      })
-      .catch(error => {
-        console.error('获取日志数据失败：', error);
-      });
-  </script>
+  <script src="js/log.js"></script>
 </body>
 </html>
