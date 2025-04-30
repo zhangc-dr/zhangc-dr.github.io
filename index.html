@@ -11,9 +11,10 @@
     <div class="container">
       <h1>👨‍💻 我的学习日志</h1>
       <nav class="navbar">
-        <a href="index.html">首页</a>
+        <a href="index.html" class="active">首页</a>
         <a href="log.html">学习日志</a>
         <a href="about.html">关于我</a>
+        <a href="appendix.html">附录</a> <!-- ✅ 新增链接 -->
       </nav>
     </div>
   </header>
@@ -32,18 +33,18 @@
   </footer>
 
   <script>
-    fetch('logs.json')
+    fetch('data/logs.json')
       .then(response => response.json())
       .then(data => {
         const updatesList = document.getElementById('updates');
         
         // 获取最后五条日志
-        const recentLogs = data.logs.slice(-5);
+        const recentLogs = data.logs.slice(0,8);
   
         // 遍历日志并生成列表项
         recentLogs.forEach(log => {
           const listItem = document.createElement('li');
-          listItem.textContent = `[${log.date}] ${log.title}`; // 直接是纯文字，不用 a 标签了
+          listItem.textContent = `[${log.date}] ${log.title}`;
           updatesList.appendChild(listItem);
         });
       })
@@ -51,6 +52,5 @@
         console.error('获取日志数据失败：', error);
       });
   </script>
-  
 </body>
 </html>
