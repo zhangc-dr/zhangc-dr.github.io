@@ -47,7 +47,10 @@
     font-weight: bold;
     transition: color 0.2s ease;
   }
-  
+  .navbar a.active {
+    border-bottom: 3px solid #1e88e5;
+    color: #1e88e5;
+  }
   /* 主内容 */
   .main {
     margin-top: 30px;
@@ -69,7 +72,6 @@
     margin-bottom: 10px;
     border-radius: 12px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
   }
   
   .updates li:hover {
