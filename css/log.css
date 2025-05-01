@@ -57,7 +57,7 @@ a {
 /* 左卡片 */
 .left-card {
   margin-right: 50%;  /* 左卡片右侧增加更大的间距 */
-  margin-top: -30px;
+  margin-top: -45px;
   border-left: 4px solid #1e88e5;
   transform: rotate(-5deg); /* 左卡片倾斜 */
   transition: transform 0.3s ease;
@@ -66,7 +66,7 @@ a {
 /* 右卡片 */
 .right-card {
   margin-left: 50%;  /* 右卡片左侧增加更大的间距 */
-  margin-top: -30px;
+  margin-top: -45px;
   border-right: 4px solid #1e88e5;
   transform: rotate(5deg); /* 右卡片倾斜 */
   transition: transform 0.3s ease;
