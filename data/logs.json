@@ -1,5 +1,13 @@
 {
-  "logs": [  
+  "logs": [
+    {
+      "id": 15,
+      "date": "2025.5.2",
+      "type": "paper",
+      "link": "",
+      "title": "DQN/DDQN/Dueling DQN原理整理",
+      "content": "今天才意识到要去看这三个算法出处，他们各自对应了一篇论文。待整理。"
+    },
     {
       "id": 14,
       "date": "2025.4.29",
