@@ -4,9 +4,9 @@
       "id": 15,
       "date": "2025.5.2",
       "type": "paper",
-      "link": "",
-      "title": "DQN/DDQN/Dueling DQN原理整理",
-      "content": "今天才意识到要去看这三个算法出处，他们各自对应了一篇论文。他们的题目分别是 Human-level control through deep reinforcement learning, Deep Reinforcement Learning with Double Q-learning, Dueling Network Architectures for Deep Reinforcement Learning 待整理!"
+      "link": "https://arxiv.org/pdf/1710.02298",
+      "title": "Rainbow DQN的介绍，另外整理DQN/DDQN/Dueling DQN原理",
+      "content": "其实对于DQN的改进不止Double和Dueling这两种，还有priority/multi-step/distribution/nosiy，加上DQN本身一共其中DQN算法需要去弄明白这几种改进思路。今天才意识到要去看这三个算法出处，他们各自对应了一篇论文。他们的题目分别是 Human-level control through deep reinforcement learning, Deep Reinforcement Learning with Double Q-learning, Dueling Network Architectures for Deep Reinforcement Learning 待整理!"
     },
     {
       "id": 14,
