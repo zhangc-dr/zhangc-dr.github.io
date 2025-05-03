@@ -1,6 +1,18 @@
 {
   "logs": [
     {
+      "id": 17,
+      "date": "2025.5.3",
+      "type": "blog",
+      "link": "https://blog.csdn.net/airwolf0992/article/details/146025933",
+      "title": "Sarsa和Q-learning的区别，如何用Sarsa求解连续状态空间问题？",
+      "content": "这个博客从更新策略、学习方式、探索策略和应用场景详细介绍了Sarsa和Q-learning的区别。而且还给出了Sarsa用于求解连续状态空间的思路，类似DQN用深度网络去训练Q。",
+      "notes": [
+        "博客提到了两个算法处理下一个动作时，Q-learning没有实际执行下一个状态对应的动作，并没有关注下一个状态的动作，只关注下一个状态的最大Q值；而Sarsa却是实际执行了下一个状态对应的动作，然后再来更新策略。也导致over estimate是Q-learning的一个很严重的问题，因为在学习的时候一步一步over estimate。",
+        "总结下来，给我的感觉是Q-learning在学习上要比Sarsa更激进，它只关注对自己最有益的路径，而Sarsa更具有探索性，他可能更能获得一个接近真实的Q函数。"
+      ]
+    },
+    {
       "id": 16,
       "date": "2025.5.3",
       "type": "blog",
