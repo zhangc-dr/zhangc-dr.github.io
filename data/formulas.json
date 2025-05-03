@@ -1,16 +1,17 @@
 [
-    {
-      "title": "Formula 1：DQN和DDQN的MSE计算公式",
-      "formulas": [
-        "DQN: a_{t + 1} = \\mathop {\\arg \\max }\\limits_{{a_{t + 1}}} Q_{tar}\\left( s_{t + 1}, a_{t + 1} \\right), MSE = \\left| \\gamma \\left( r_t + Q_{tar}(s_{t+1}, a_{t+1}) \\right) - Q_{eval}(s_t, a_t) \\right|^2",
-        "DDQN: a_{t + 1} = \\mathop {\\arg \\max }\\limits_{{a_{t + 1}}} Q_{eval}(s_{t + 1}, a_{t + 1}), MSE = \\left| \\gamma \\left( r_t + Q_{tar}(s_{t+1}, a_{t+1}) \\right) - Q_{eval}(s_t, a_t) \\right|^2."
+  {
+    "title": "Formula 1：DQN和DDQN的MSE计算公式",
+    "formulas": [
+      "DQN: a_{t + 1} = \\mathop {\\arg \\max }\\limits_{{a_{t + 1}}} Q_{tar}\\left( s_{t + 1}, a_{t + 1} \\right), MSE = \\left| \\gamma \\left( r_t + Q_{tar}(s_{t+1}, a_{t+1}) \\right) - Q_{eval}(s_t, a_t) \\right|^2",
+      "DDQN: a_{t + 1} = \\mathop {\\arg \\max }\\limits_{{a_{t + 1}}} Q_{eval}(s_{t + 1}, a_{t + 1}), MSE = \\left| \\gamma \\left( r_t + Q_{tar}(s_{t+1}, a_{t+1}) \\right) - Q_{eval}(s_t, a_t) \\right|^2."
+    ]
+  },
+  {
+      "title": "Formula 3：DQN连续动作空间Q值计算公式以及Q网络更新方式",
+      "formulas":[
+          "{\\rm{Q}}\\left( {{s_t},{a_t}} \\right) = A\\left( {{s_t},{a_t}} \\right) + V\\left( {{s_t}} \\right),A\\left( {{s_t},{a_t}} \\right) =  - 0.5{\\left( {{a_t} - \\mu \\left( {{s_t}} \\right)} \\right)^{\\rm{T}}}\\Sigma \\left( {{s_t}} \\right)\\left( {{a_t} - \\mu \\left( {{s_t}} \\right)} \\right).",
+          "MSE = {\\left( {{r_t} + \\gamma V\\left( {{s_{t + 1}}} \\right) - Q\\left( {{s_t},{a_t}} \\right)} \\right)^2}"
       ]
-    },
-    {
-        "title": "Formula 3:DQN连续动作空间Q值计算公式",
-        "formuals":[
-            "{\rm{Q}}\left( {{s_t},{a_t}} \right) = A\left( {{s_t},{a_t}} \right) + V\left( {{s_t}} \right),A\left( {{s_t},{a_t}} \right) =  - 0.5{\left( {{a_t} - \mu \left( {{s_t}} \right)} \right)^{\rm{T}}}\Sigma \left( {{s_t}} \right)\left( {{a_t} - \mu \left( {{s_t}} \right)} \right)."
-        ]
-    }
-  ]
-  
+  }
+]
+
