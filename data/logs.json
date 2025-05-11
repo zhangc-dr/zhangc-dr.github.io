@@ -5,7 +5,7 @@
       "date": "2025.5.10",
       "type": "blog",
       "link": "https://blog.csdn.net/v20000727/article/details/138076216",
-      "title": "如何使用Robbins Monro方法估计统计量的均值",
+      "title": "Robbins Monro theorem和Robbins Monro algorithm",
       "content": "这个博客把赵世钰老师第六章中一部分内容单独拎出来详细介绍了一下，提到了如何用迭代的方式求解逼近期望的统计均值。这个定理还能被用于求解非线性方程的根，要想使用这个定理要求也很多：",
       "notes":[
         "1. 这个算法要收敛，对函数的要求其实蛮高的，第一个条件要求函数g(x)的导数为正且不能为+∞ ，这就是说要求函数是单调递增的",
