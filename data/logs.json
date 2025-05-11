@@ -9,7 +9,7 @@
       "content": "这个博客讲到了高数中求递归数列最终是否收敛，收敛值是多少的问题。刚好用到了赵世钰老师书中也用到的Contraction Mapping theorem。如果一个函数f(x)满足这个定理的条件，那么方程f(x)=x一定有解，而且有唯一解，而且还有一个迭代算法能最终求出真实值。",
       "notes":[
         " 简单的讲，条件就是对于f(x)在定义域上必须满足导数的绝对值小于1.",
-        "算法是：xk+1=f(xk)，代码实现见本地‘D:\research\MatlabCode\MyTry\others\someAlgorithm.m’"
+        "算法是：xk+1=f(xk)，代码实现见本地D:\\research\\MatlabCode\\MyTry\\others\\someAlgorithm.m"
       ]
     },
     {
@@ -23,7 +23,7 @@
         "1. 这个算法要收敛，对函数的要求其实蛮高的，第一个条件要求函数g(x)的导数为正且不能为+∞ ，这就是说要求函数是单调递增的",
         "2. 要求步长为消失步长，常见的消失步长如ak=1/k",
         "3. 对噪声的要求，要求噪声不能太离谱",
-        "博客给出了Robbins Monro的算法和Newton method的算法，见Formula 4，代码实现见本地‘D:\research\MatlabCode\MyTry\others\someAlgorithm.m’。博客还讲到了如何使用Robbins Monroe theorem求优化问题：优化问题可以转换成求目标函数的极值点，极值点可以用对函数求一阶导来得到，然后令一阶导等于0，这就构造出了一个方程求根的问题。对于这个问题如果满足Robbins Monro的条件，就可以使用Robbins Monro定理迭代得到方程的根，而且定理还能保证迭代出来的根最终一定能收敛到真实值。"
+        "博客给出了Robbins Monro的算法和Newton method的算法，见Formula 4，代码实现见本地D:\\research\\MatlabCode\\MyTry\\others\\someAlgorithm.m。博客还讲到了如何使用Robbins Monroe theorem求优化问题：优化问题可以转换成求目标函数的极值点，极值点可以用对函数求一阶导来得到，然后令一阶导等于0，这就构造出了一个方程求根的问题。对于这个问题如果满足Robbins Monro的条件，就可以使用Robbins Monro定理迭代得到方程的根，而且定理还能保证迭代出来的根最终一定能收敛到真实值。"
       ]
     },
     {
