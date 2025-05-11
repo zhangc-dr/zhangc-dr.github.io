@@ -22,8 +22,8 @@
   {
       "title": "Formula 4：Robbins Monro algorithm和Newton algorithm",
       "formulas":[
-          "Robbins{\rm{\\space}}Monro:{\rm{\\space}}{x_{k + 1}} \leftarrow {x_k} - {\alpha _k}f({x_k})",
-          "Newton:{\rm{\\space\\space}}{x_{k + 1}} \leftarrow {x_k} - f({x_k})/f'({x_k})"
+          "Robbins{\rm{\\space}}Monro:{\\rm{\\space}}{x_{k + 1}} \\leftarrow {x_k} - {\\alpha _k}f({x_k})",
+          "Newton:{\rm{\\space\\space}}{x_{k + 1}} \\leftarrow {x_k} - f({x_k})/f'({x_k})"
       ]
   }
 ]
