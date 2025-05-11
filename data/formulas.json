@@ -18,6 +18,13 @@
           "{\\rm{Q}}\\left( {{s_t},{a_t}} \\right) = A\\left( {{s_t},{a_t}} \\right) + V\\left( {{s_t}} \\right),A\\left( {{s_t},{a_t}} \\right) =  - 0.5{\\left( {{a_t} - \\mu \\left( {{s_t}} \\right)} \\right)^{\\rm{T}}}\\Sigma \\left( {{s_t}} \\right)\\left( {{a_t} - \\mu \\left( {{s_t}} \\right)} \\right).",
           "MSE = {\\left| {{r_t} + \\gamma V\\left( {{s_{t + 1}}} \\right) - Q\\left( {{s_t},{a_t}} \\right)} \\right|^2}"
       ]
+  },
+  {
+      "title": "Formula 4：Robbins Monro algorithm和Newton algorithm",
+      "formulas":[
+          "Robbins{\rm{\\space}}Monro:{\rm{\\space}}{x_{k + 1}} \leftarrow {x_k} - {\alpha _k}f({x_k})",
+          "Newton:{\rm{\\space\\space}}{x_{k + 1}} \leftarrow {x_k} - f({x_k})/f'({x_k})"
+      ]
   }
 ]
 
