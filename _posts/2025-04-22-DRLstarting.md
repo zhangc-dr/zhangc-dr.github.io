@@ -13,6 +13,7 @@ mermaid: true
 **个人学习与思考摘要：**
 
 {% include embed/youtube.html id='OAKAZhFmYoI' %}
+
 > 待解决的问题：为什么采用优势函数？为什么希望R这一项有正有负？为什么改写R？
 {: .prompt-warning }
 
