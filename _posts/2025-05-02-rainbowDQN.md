@@ -10,9 +10,6 @@ math: true
 mermaid: true
 ---
 
-{% include embed/bilibili.html id='BV1iz421h7gb' %}
-{% include embed/youtube.html id='OAKAZhFmYoI' %}
-
 [arXiv: Rainbow: Combining Improvements in Deep Reinforcement Learning](https://arxiv.org/pdf/1710.02298)
 
 本笔记简要介绍了Rainbow DQN算法，以及DQN、Double DQN、Dueling DQN的原理。Rainbow DQN结合了7种DQN相关改进（包括priority、multi-step、distribution、noisy等），是对DQN家族的集大成者。目前还需进一步梳理各个改进的具体思路及其对应的原始论文：
