@@ -44,8 +44,8 @@ mermaid: true
 - 最后，DDQN的更新方式在DQN的基础上又有所不同，方程左边这三个算法的计算方式都是一样的，对于DDQN中方程的右边和DQN的区别只是下一个状态的最优动作不是由目标网络得到的，而是由估计网络得到的，而下一个状态和这个下一个最优动作对应的Q值则还是根据目标网络得到的，公式如下：
 $$
 \begin{align}
-DQN: a_{t + 1} = \mathop {\arg \max }\limits_{{a_{t + 1}}} Q_{tar}\left( s_{t + 1}, a_{t + 1} \right), MSE = \left|  r_t +\gamma Q_{tar}(s_{t+1}, a_{t+1}) - Q_{eval}(s_t, a_t) \right|^2, \\
-DDQN: a_{t + 1} = \mathop {\arg \max }\limits_{{a_{t + 1}}} Q_{eval}(s_{t + 1}, a_{t + 1}), MSE = \left|  r_t +\gamma Q_{tar}(s_{t+1}, a_{t+1}) - Q_{eval}(s_t, a_t) \right|^2.
+DQN: a_{t + 1} = \mathop {\arg \max }\limits_{ {a_{t + 1}}} Q_{tar}\left( s_{t + 1}, a_{t + 1} \right), MSE = \left|  r_t +\gamma Q_{tar}(s_{t+1}, a_{t+1}) - Q_{eval}(s_t, a_t) \right|^2, \\
+DDQN: a_{t + 1} = \mathop {\arg \max }\limits_{ {a_{t + 1}}} Q_{eval}(s_{t + 1}, a_{t + 1}), MSE = \left|  r_t +\gamma Q_{tar}(s_{t+1}, a_{t+1}) - Q_{eval}(s_t, a_t) \right|^2.
 \end{align}
 $$
 #### 6. 如何用Q-learning求解连续动作问题?
@@ -53,8 +53,8 @@ $$
 - 方法1，离散化动作空间，然后再用传统DQN来解这个问题。这个很好理解；方法2，参考一篇论文Continuous Deep Q-Learning with Model-based Acceleration 对于这个方法，需要重新设计Q网络结构，而且需要改变Q函数的求解方式为Q(st,at)=A(st,at)+V(st)。但对于Q函数的计算仅仅是这样做了个变换是不够的，因为A(st,at)中依然存在连续的at不好处理，需要通过求偏导来得到最优at，这样会增大计算负担是不可取的（李老师视频中还说到这样做还会导致陷入局部最优，我目前只能理解增大计算负担）。paper中提出的方法就是找到一个函数用来拟合A(st,at)，使得不需要A(st,at)对at求偏导就能获取最优at。paper找到的这个函数是一个二次函数，这个二次函数由两个参数确定，一个是μ另一个是Σ，他们的维度取决于action的维度，公式如下：
 $$
 \begin{align}
-{\rm{Q}}\left( {{s_t},{a_t}} \right) = A\left( {{s_t},{a_t}} \right) + V \left( {{s_t}} \right),A\left( {{s_t},{a_t}} \right) =  - 0.5{\left( {{a_t} - \mu \left( {{s_t}} \right)} \right)^{\rm{T}}}\Sigma \left( {{s_t}} \right)\left( {{a_t} - \mu \left( {{s_t}} \right)} \right), \\
-MSE = {\left| {{r_t} + \gamma V\left( {{s_{t + 1}}} \right) - Q\left( {{s_t},{a_t}} \right)} \right|^2}
+{\rm{Q}}\left( { {s_t},{a_t}} \right) = A\left( { {s_t},{a_t}} \right) + V \left( { {s_t}} \right),A\left( { {s_t},{a_t}} \right) =  - 0.5{\left( { {a_t} - \mu \left( { {s_t}} \right)} \right)^{\rm{T}}}\Sigma \left( { {s_t}} \right)\left( { {a_t} - \mu \left( { {s_t}} \right)} \right), \\
+MSE = {\left| { {r_t} + \gamma V\left( { {s_{t + 1}}} \right) - Q\left( { {s_t},{a_t}} \right)} \right|^2}
 \end{align}
 $$
 
