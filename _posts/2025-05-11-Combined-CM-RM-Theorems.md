@@ -17,6 +17,7 @@ mermaid: true
 **要点总结：**
 - 简单的讲，条件就是对于$f(x)$在定义域上必须满足导数的绝对值小于1。
 - 算法是：$x_{k+1}=f(x_k)$，代码如下：
+
 ```matlab
 %% Contraction Mapping algorithm: existence, uniqueness, algorithm of an equation's root
 % function: f(x) = 1/x + 1, x>1; Utilizing contraction mapping theorem, we can
@@ -49,6 +50,7 @@ Newton: {x_{k + 1}} \leftarrow {x_k} - f({x_k})/f'({x_k}),
 \end{align}
 $$
 代码如下。
+
 ```matlab
 %% 1.Robbins Monro algorithm: nonlinear equation
 % equation: lnx - 1 = 0
@@ -60,7 +62,8 @@ while ~done
     x = x_;
     disp(['k: ',num2str(k),', estimate: ',num2str(x)])
 end
-
+```
+```matlab
 %% 2. Newton algorithm: nonlinear equation
 % equation: lnx - 1 = 0
 x = 1; done = false; k = 0;
@@ -71,7 +74,8 @@ while ~done
     x = x_;
     disp(['k: ',num2str(k),', estimate: ',num2str(x)])
 end
-
+```
+```matlab
 %% 3.Robbins Monro algorithm: expectation estimatimation 
 % equation: uk - u = 0, where f(x) = e^x, x~Uniform(0,1), u = E{f(x)}
 k = 0; u = -1; done = false;
