@@ -18,7 +18,7 @@ mermaid: true
 - 文章进一步探讨了将SDMA和NOMA结合起来的方案hybrid mMIMO-NOMA。在这种方案下，当某些信道的信道相关性强时就会被分配到同一组中采用NOMA的方式与基站建立链接；如果某些用户和其他用户信道相关性都不强则不会分配group而是直接采用SDMA的方式与基站建立链接。
 
 > - 应引起重视的是我现在认知中的RSMA并不是真正的RSMA而是1 layer RS.
-{: .prompt-warning }
+{: .prompt-danger }
 
 > - 疑问1：文中考虑的MISO NOMA都是Group-based NOMA，Group-based NOMA的特点是既利用了SISO NOMA自带的power domain又利用了multi-antenna的spatial domain（但是没有充分利用spatial domain）。然而为什么文中没考虑non-group-based NOMA？我个人猜想，同时也结合[知乎某位学者关于non-group-based NOMA的评论](https://www.zhihu.com/question/38995447)，我的理解是如果用户信道相关性不高non-group-based NOMA的power domain完全变成冗余的了。因为信道相关性不高，就会使得用户间干扰可以很好的消除根本没必要再使用SIC。
 待办：这里有必要验证一下信道相关性不高的情况下强行使用non-group-based NOMA会有什么结果？
@@ -53,27 +53,27 @@ mermaid: true
 The users’ angles relative to the base station, $\theta_1, \theta_2$; The number of transmit antennas at BS, N.
 
 ## 1. SDMA: (Spatial domain)
-Transmit signal: ${\bf{x}} = {{\bf{p}}_1}{s_1} + {{\bf{p}}_2}{s_2}$,
+Transmit signal: ${\bf{x}} = { {\bf{p}}_1}{s_1} + { {\bf{p}}_2}{s_2}$,
 Achievable rate of each user:
 $$
 \begin{aligned}
-{R_1} = \log \left( {1 + \frac{{{{\left| {{{\bf{h}}_1}{{\bf{p}}_1}} \right|}^2}}}{{{{\left| {{{\bf{h}}_1}{{\bf{p}}_2}} \right|}^2}+{\sigma ^2}}}} \right), \\
-{R_2} = \log \left( {1 + \frac{{{{\left| {{{\bf{h}}_2}{{\bf{p}}_2}} \right|}^2}}}{{{{\left| {{{\bf{h}}_2}{{\bf{p}}_1}} \right|}^2} + {\sigma ^2}}}} \right).
+{R_1} = \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_1}{ {\bf{p}}_1}} \right|}^2}}}{ { { {\left| { { {\bf{h}}_1}{ {\bf{p}}_2}} \right|}^2}+{\sigma ^2}}}} \right), \\
+{R_2} = \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_2}{ {\bf{p}}_2}} \right|}^2}}}{ { { {\left| { { {\bf{h}}_2}{ {\bf{p}}_1}} \right|}^2} + {\sigma ^2}}}} \right).
 \end{aligned}
 $$
 Problems:
 $$
 \begin{aligned}
-\mathop {\max }\limits_{ { {\bf{p}}_1},{{\bf{p}}_2}} &{R_1} + {R_2}\\
+\mathop {\max }\limits_{ { {\bf{p}}_1},{ {\bf{p}}_2}} &{R_1} + {R_2}\\
 s.t.\quad &{R_1} \ge {\eta _1}\\
 & {R_2} \ge {\eta _2}\\
-&  {\left| { { {\bf{p}}_1}} \right|^2} + {\left| {{{\bf{p}}_2}} \right|^2} \le {P_t}
+&  {\left| { { {\bf{p}}_1}} \right|^2} + {\left| { { {\bf{p}}_2}} \right|^2} \le {P_t}
 \end{aligned},
 $$
 $$
 \begin{aligned}
-\mathop {\max }\limits_{{{\bf{p}}_1},{{\bf{p}}_2}} \mathop {\min }\limits_k &{R_k}\\
-s.t. \quad & {\left| {{{\bf{p}}_1}} \right|^2} + {\left| {{{\bf{p}}_2}} \right|^2} \le {P_t}
+\mathop {\max }\limits_{ { {\bf{p}}_1},{ {\bf{p}}_2}} \mathop {\min }\limits_k &{R_k}\\
+s.t. \quad & {\left| { { {\bf{p}}_1}} \right|^2} + {\left| { { {\bf{p}}_2}} \right|^2} \le {P_t}
 \end{aligned}
 $$
 
@@ -82,15 +82,15 @@ Transmit signal: ${\bf{x}} = {P_1}{\bf{v}}{s_1} + {P_2}{\bf{v}}{s_2}$, where ${\
 Achievable rate of each user:
 $$
 \begin{aligned}
-{R_2} &= \log \left( {1 + \frac{{{P_2}{{\left| {{{\bf{h}}_2}{\bf{v}}} \right|}^2}}}{{{P_1}{{\left| {{{\bf{h}}_2}{\bf{v}}} \right|}^2} + {\sigma ^2}}}} \right),\\
-{R_1} &= \log \left( {1 + \frac{{{P_1}{{\left| {{{\bf{h}}_1}{\bf{v}}} \right|}^2}}}{{{\sigma ^2}}}} \right), \\
-{R_{1,2}} &= \log \left( {1 + \frac{{{P_2}{{\left| {{{\bf{h}}_1}{\bf{v}}} \right|}^2}}}{{{P_1}{{\left| {{{\bf{h}}_1}{\bf{v}}} \right|}^2} + {\sigma ^2}}}} \right).
+{R_2} &= \log \left( {1 + \frac{ { {P_2}{ {\left| { { {\bf{h}}_2}{\bf{v}}} \right|}^2}}}{ { {P_1}{ {\left| { { {\bf{h}}_2}{\bf{v}}} \right|}^2} + {\sigma ^2}}}} \right),\\
+{R_1} &= \log \left( {1 + \frac{ { {P_1}{ {\left| { { {\bf{h}}_1}{\bf{v}}} \right|}^2}}}{ { {\sigma ^2}}}} \right), \\
+{R_{1,2}} &= \log \left( {1 + \frac{ { {P_2}{ {\left| { { {\bf{h}}_1}{\bf{v}}} \right|}^2}}}{ { {P_1}{ {\left| { { {\bf{h}}_1}{\bf{v}}} \right|}^2} + {\sigma ^2}}}} \right).
 \end{aligned}
 $$
 Problems:
 $$
 \begin{aligned}
-\mathop {\max }\limits_{{P_1},{P_2},{\bf{v}}} &{R_1} + {R_2}\\
+\mathop {\max }\limits_{ {P_1},{P_2},{\bf{v}}} &{R_1} + {R_2}\\
 s.t. \quad &\left|{\bf{h}}_1{\bf{v}}\right|^2 \ge \left|{\bf{h}}_2{\bf{v}}\right|^2,\\
 &{R_1} \ge {\eta _1},\\
 &{R_2} \ge {\eta _2},\\
@@ -102,7 +102,7 @@ $$
 
 $$
 \begin{aligned}
-\mathop {\max }\limits_{{P_1},{P_2},{\bf{v}}} \mathop {\min }\limits_k &{R_k}\\
+\mathop {\max }\limits_{ {P_1},{P_2},{\bf{v}}} \mathop {\min }\limits_k &{R_k}\\
 s.t.\quad &\left|{\bf{h}}_1{\bf{v}}\right|^2 \ge \left|{\bf{h}}_2{\bf{v}}\right|^2,\\
 &{\left| {\bf{v}} \right|^2} = 1,\\
 &{P_1} + {P_2} \le {P_t},\\
@@ -118,64 +118,64 @@ $$
 {: .prompt-warning }
 
 ## 3. Non-group-based NOMA: (Power domain and Spatial domain), assume user1 is strong user.
-Transmit signal: ${\bf{x}} = {{\bf{p}}_1}{s_1} + {{\bf{p}}_2}{s_2}$,
+Transmit signal: ${\bf{x}} = { {\bf{p}}_1}{s_1} + { {\bf{p}}_2}{s_2}$,
 Achievable rate of each user:
 $$
 \begin{aligned}
-{R_2} &= \log \left( {1 + \frac{{{{\left| {{{\bf{h}}_2}{\bf{p}}_2} \right|}^2}}}{{{{\left| {{{\bf{h}}_2}{\bf{p}}_1} \right|}^2} + {\sigma ^2}}}} \right),\\
-{R_1} &= \log \left( {1 + \frac{{{{\left| {{{\bf{h}}_1}{\bf{p}}_1} \right|}^2}}}{{{\sigma ^2}}}} \right), \\
-{R_{1,2}} &= \log \left( {1 + \frac{{{{\left| {{{\bf{h}}_1}{\bf{p}}_2} \right|}^2}}}{{{{\left| {{{\bf{h}}_1}{\bf{p}}_1} \right|}^2} + {\sigma ^2}}}} \right).
+{R_2} &= \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_2}{\bf{p}}_2} \right|}^2}}}{ { { {\left| { { {\bf{h}}_2}{\bf{p}}_1} \right|}^2} + {\sigma ^2}}}} \right),\\
+{R_1} &= \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_1}{\bf{p}}_1} \right|}^2}}}{ { {\sigma ^2}}}} \right), \\
+{R_{1,2}} &= \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_1}{\bf{p}}_2} \right|}^2}}}{ { { {\left| { { {\bf{h}}_1}{\bf{p}}_1} \right|}^2} + {\sigma ^2}}}} \right).
 \end{aligned}
 $$
 Problems:
 $$
 \begin{aligned}
-\mathop {\max }\limits_{{\bf{p}}_1,{\bf{p}}_2} &{R_1} + {R_2}\\
+\mathop {\max }\limits_{ {\bf{p}}_1,{\bf{p}}_2} &{R_1} + {R_2}\\
 s.t. \quad &\left|{\bf{h}}_1{\bf{p}}_1\right|^2 \ge \left|{\bf{h}}_2{\bf{p}}_2\right|^2,\\
 &{R_1} \ge {\eta _1},\\
 &{R_2} \ge {\eta _2},\\
-& {\left| {{{\bf{p}}_1}} \right|^2} + {\left| {{{\bf{p}}_2}} \right|^2} \le {P_t}
+& {\left| { { {\bf{p}}_1}} \right|^2} + {\left| { { {\bf{p}}_2}} \right|^2} \le {P_t}
 \end{aligned},
 $$
 
 $$
 \begin{aligned}
-\mathop {\max } \limits_{{\bf{p}}_1,{\bf{p}}_2} \mathop {\min }\limits_k  &{R_k}\\
+\mathop {\max } \limits_{ {\bf{p}}_1,{\bf{p}}_2} \mathop {\min }\limits_k  &{R_k}\\
 s.t. \quad & \left|{\bf{h}}_1{\bf{p}}_1\right|^2 \ge \left|{\bf{h}}_2{\bf{p}}_2\right|^2,\\
-&{\left| {{{\bf{p}}_1}} \right|^2} + {\left| {{{\bf{p}}_2}} \right|^2} \le {P_t}
+&{\left| { { {\bf{p}}_1}} \right|^2} + {\left| { { {\bf{p}}_2}} \right|^2} \le {P_t}
 \end{aligned}
 $$
 
 ## 4. RSMA:
-Transmit signal: ${\bf{x}} = {{\bf{p}}_c}{s_c} + {{\bf{p}}_1}{s_1} + {{\bf{p}}_2}{s_2}$,
+Transmit signal: ${\bf{x}} = { {\bf{p}}_c}{s_c} + { {\bf{p}}_1}{s_1} + { {\bf{p}}_2}{s_2}$,
 Achievable rate of each user:
 $$
 \begin{aligned}
-{R_{c,1}} &= \log \left( {1 + \frac{{{{\left| {{{\bf{h}}_1}{{\bf{p}}_c}} \right|}^2}}}{{{{\left| {{{\bf{h}}_1}{{\bf{p}}_1}} \right|}^2}+{{\left| {{{\bf{h}}_1}{{\bf{p}}_2}} \right|}^2}+{\sigma ^2}}}} \right), \\
-{R_{c,2}} &= \log \left( {1 + \frac{{{{\left| {{{\bf{h}}_2}{{\bf{p}}_c}} \right|}^2}}}{{{{\left| {{{\bf{h}}_2}{{\bf{p}}_1}} \right|}^2}+{{\left| {{{\bf{h}}_2}{{\bf{p}}_2}} \right|}^2}+{\sigma ^2}}}} \right), \\
-{R_{p,1}} &= \log \left( {1 + \frac{{{{\left| {{{\bf{h}}_1}{{\bf{p}}_1}} \right|}^2}}}{{{{\left| {{{\bf{h}}_1}{{\bf{p}}_2}} \right|}^2}+{\sigma ^2}}}} \right), \\
-{R_{p,2}} &= \log \left( {1 + \frac{{{{\left| {{{\bf{h}}_2}{{\bf{p}}_2}} \right|}^2}}}{{{{\left| {{{\bf{h}}_2}{{\bf{p}}_1}} \right|}^2} + {\sigma ^2}}}} \right).
+{R_{c,1}} &= \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_1}{ {\bf{p}}_c}} \right|}^2}}}{ { { {\left| { { {\bf{h}}_1}{ {\bf{p}}_1}} \right|}^2}+{ {\left| { { {\bf{h}}_1}{ {\bf{p}}_2}} \right|}^2}+{\sigma ^2}}}} \right), \\
+{R_{c,2}} &= \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_2}{ {\bf{p}}_c}} \right|}^2}}}{ { { {\left| { { {\bf{h}}_2}{ {\bf{p}}_1}} \right|}^2}+{ {\left| { { {\bf{h}}_2}{ {\bf{p}}_2}} \right|}^2}+{\sigma ^2}}}} \right), \\
+{R_{p,1}} &= \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_1}{ {\bf{p}}_1}} \right|}^2}}}{ { { {\left| { { {\bf{h}}_1}{ {\bf{p}}_2}} \right|}^2}+{\sigma ^2}}}} \right), \\
+{R_{p,2}} &= \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_2}{ {\bf{p}}_2}} \right|}^2}}}{ { { {\left| { { {\bf{h}}_2}{ {\bf{p}}_1}} \right|}^2} + {\sigma ^2}}}} \right).
 \end{aligned}
 $$
 
 Problems:
 $$
 \begin{aligned}
-\mathop {\max }\limits_{{\bf{p}}_c,{\bf{p}}_1,{\bf{p}}_2} & C_1 + {R_1} + C_2 + {R_2}\\
+\mathop {\max }\limits_{ {\bf{p}}_c,{\bf{p}}_1,{\bf{p}}_2} & C_1 + {R_1} + C_2 + {R_2}\\
 s.t. \quad &{R_c} = \min(R_{c,1},R_{c,2}),\\
 & C_1 + C_2 = R_c, \\
 &C_1 + {R_{p,1}} \ge {\eta _1},\\
 &C_2 + {R_{p,2}} \ge {\eta _2},\\
-& {\left| {{{\bf{p}}_1}} \right|^2} + {\left| {{{\bf{p}}_2}} \right|^2} \le {P_t}
+& {\left| { { {\bf{p}}_1}} \right|^2} + {\left| { { {\bf{p}}_2}} \right|^2} \le {P_t}
 \end{aligned},
 $$
 
 $$
 \begin{aligned}
-\mathop {\max } \limits_{{\bf{p}}_c,{\bf{p}}_1,{\bf{p}}_2} \mathop {\min }\limits_k  &{C_k + R_k}\\
+\mathop {\max } \limits_{ {\bf{p}}_c,{\bf{p}}_1,{\bf{p}}_2} \mathop {\min }\limits_k  &{C_k + R_k}\\
 s.t. \quad & {R_c} = \min(R_{c,1},R_{c,2}),\\
 & C_1 + C_2 = R_c, \\
-& {\left| {{{\bf{p}}_1}} \right|^2} + {\left| {{{\bf{p}}_2}} \right|^2} \le {P_t}
+& {\left| { { {\bf{p}}_1}} \right|^2} + {\left| { { {\bf{p}}_2}} \right|^2} \le {P_t}
 \end{aligned}
 $$
 
