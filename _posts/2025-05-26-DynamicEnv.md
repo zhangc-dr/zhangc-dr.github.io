@@ -3,8 +3,8 @@ title: 通信中的动态环境指的是什么？如何建模？
 description: 大量论文在提到强化学习相对于传统优化方法的优势时，都会提到的一大优势是可以适应动态环境。在熟悉的强化学习应用场景中，例如格子城中，动态环境可能是一股强劲的足以吹动agent的风，也可以是某个位置忽有忽无的陷阱。那么在通信中，信道是描述通信环境的主要指标，那么动态环境中的动态两个字在通信中如何体现？
 author: Chen Zhang
 date: 2025-05-26 00:00:00 +0800
-categories: [Blogging]
-tags: [Basic knowledge of wireless Communications]
+categories: [wireless communications]
+tags: [dynamic env]
 pin: true
 math: true
 mermaid: true
