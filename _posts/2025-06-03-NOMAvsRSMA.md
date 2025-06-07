@@ -113,10 +113,11 @@ $$
 s.t.\quad &\left|{\bf{h}}_1{\bf{v}}\right| \ge \left|{\bf{h}}_2{\bf{v}}\right|,\\
 &{\left| {\bf{v}} \right|^2} = 1,\\
 &{P_1} + {P_2} \le {P_t},\\
-& {P_1},{P_2} \ge 0
+& {P_1},{P_2} \ge 0.
 \end{aligned}
 $$
 
+你好
 $\left|{\bf{h}}_1{\bf{w}}_1\right|$
 > - 起先，我把${R_{1,2}} \ge {R_2}$这个约束放进了上面这两个优化问题中，但是经过思考之后发现是多余的。注意到下面还有一个约束$\left|{\bf{h}}_1{\bf{v}}\right| \ge \left|{\bf{h}}_2{\bf{v}}\right|$，这个约束明确了user1和user2中user1是强用户。代入到$R_2,R_{1,2}$的定义式中化简之后发现在$\left|{\bf{h}}_1{\bf{v}}\right|^2 \ge \left|{\bf{h}}_2{\bf{v}}\right|^2$下$R_2 \le R_{1,2}$恒成立。因此不必加上${R_{1,2}} \ge {R_2}$这个约束。
 {: .prompt-warning }
