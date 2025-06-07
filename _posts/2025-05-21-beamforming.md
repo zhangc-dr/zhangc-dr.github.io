@@ -3,8 +3,8 @@ title: 如何理解基站发送的信号可以被建模为x=Σpksk
 description: 本博客解释了MIMO系统中$x=Σp_{k}s_{k}$这种建模方式与不同beamforming结构（analog, digital, hybrid）的关系，以及为什么该模型主要适用于digital beamformer。
 author: Chen Zhang
 date: 2025-05-21 00:00:00 +0800
-categories: [Blogging]
-tags: [Basic knowledge of wireless Communications]
+categories: [wireless communications]
+tags: [beamformer]
 pin: true
 math: true
 mermaid: true
