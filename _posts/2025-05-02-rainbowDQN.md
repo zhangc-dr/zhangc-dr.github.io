@@ -5,7 +5,7 @@ author: Chen Zhang
 date: 2025-05-02 00:00:00 +0800
 categories: [DRL]
 tags: [DQN, Rainbow DQN]
-pin: true
+pin: false
 math: true
 mermaid: true
 ---
