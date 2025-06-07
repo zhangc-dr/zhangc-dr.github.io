@@ -5,7 +5,7 @@ author: Chen Zhang
 date: 2025-04-27 00:00:00 +0800
 categories: [DRL]
 tags: [PPO, Continuous Action Space]
-pin: true
+pin: false
 math: true
 mermaid: true
 ---
