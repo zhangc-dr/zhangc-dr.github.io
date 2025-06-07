@@ -5,7 +5,7 @@ author: Chen Zhang
 date: 2025-05-21 00:00:00 +0800
 categories: [wireless communications]
 tags: [beamformer]
-pin: true
+pin: false
 math: true
 mermaid: true
 ---
