@@ -3,8 +3,8 @@ title: DRL相关资料
 description: 强化学习相关的资料。
 author: Chen Zhang
 date: 2025-04-27 00:00:00 +0800
-categories: [Blogging]
-tags: [Reinforcement Learnings]
+categories: [DRL]
+tags: [DRL]
 pin: true
 math: true
 mermaid: true
