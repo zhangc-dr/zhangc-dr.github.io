@@ -5,7 +5,7 @@ author: Chen Zhang
 date: 2025-06-03 16:08:00 +0800
 categories: [wireless communications]
 tags: [RSMA, NOMA, SDMA]
-pin: true
+pin: false
 math: true
 mermaid: true
 ---
@@ -55,13 +55,16 @@ The users’ angles relative to the base station, $\theta_1, \theta_2$; The numb
 ## 1. SDMA: (Spatial domain)
 Transmit signal: ${\bf{x}} = { {\bf{p}}_1}{s_1} + { {\bf{p}}_2}{s_2}$,
 Achievable rate of each user:
+
 $$
 \begin{aligned}
 {R_1} = \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_1}{ {\bf{p}}_1}} \right|}^2}}}{ { { {\left| { { {\bf{h}}_1}{ {\bf{p}}_2}} \right|}^2}+{\sigma ^2}}}} \right), \\
 {R_2} = \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_2}{ {\bf{p}}_2}} \right|}^2}}}{ { { {\left| { { {\bf{h}}_2}{ {\bf{p}}_1}} \right|}^2} + {\sigma ^2}}}} \right).
 \end{aligned}
 $$
+
 Problems:
+
 $$
 \begin{aligned}
 \mathop {\max }\limits_{ { {\bf{p}}_1},{ {\bf{p}}_2}} &{R_1} + {R_2}\\
@@ -70,6 +73,7 @@ s.t.\quad &{R_1} \ge {\eta _1}\\
 &  {\left| { { {\bf{p}}_1}} \right|^2} + {\left| { { {\bf{p}}_2}} \right|^2} \le {P_t}
 \end{aligned},
 $$
+
 $$
 \begin{aligned}
 \mathop {\max }\limits_{ { {\bf{p}}_1},{ {\bf{p}}_2}} \mathop {\min }\limits_k &{R_k}\\
@@ -80,6 +84,7 @@ $$
 ## 2. Group-based NOMA: (Power domain), assume user1 is strong user.
 Transmit signal: ${\bf{x}} = {P_1}{\bf{v}}{s_1} + {P_2}{\bf{v}}{s_2}$, where ${\bf{v}}$ denotes group beamer.
 Achievable rate of each user:
+
 $$
 \begin{aligned}
 {R_2} &= \log \left( {1 + \frac{ { {P_2}{ {\left| { { {\bf{h}}_2}{\bf{v}}} \right|}^2}}}{ { {P_1}{ {\left| { { {\bf{h}}_2}{\bf{v}}} \right|}^2} + {\sigma ^2}}}} \right),\\
@@ -87,7 +92,9 @@ $$
 {R_{1,2}} &= \log \left( {1 + \frac{ { {P_2}{ {\left| { { {\bf{h}}_1}{\bf{v}}} \right|}^2}}}{ { {P_1}{ {\left| { { {\bf{h}}_1}{\bf{v}}} \right|}^2} + {\sigma ^2}}}} \right).
 \end{aligned}
 $$
+
 Problems:
+
 $$
 \begin{aligned}
 \mathop {\max }\limits_{ {P_1},{P_2},{\bf{v}}} &{R_1} + {R_2}\\
@@ -120,6 +127,7 @@ $$
 ## 3. Non-group-based NOMA: (Power domain and Spatial domain), assume user1 is strong user.
 Transmit signal: ${\bf{x}} = { {\bf{p}}_1}{s_1} + { {\bf{p}}_2}{s_2}$,
 Achievable rate of each user:
+
 $$
 \begin{aligned}
 {R_2} &= \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_2}{\bf{p}}_2} \right|}^2}}}{ { { {\left| { { {\bf{h}}_2}{\bf{p}}_1} \right|}^2} + {\sigma ^2}}}} \right),\\
@@ -127,7 +135,9 @@ $$
 {R_{1,2}} &= \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_1}{\bf{p}}_2} \right|}^2}}}{ { { {\left| { { {\bf{h}}_1}{\bf{p}}_1} \right|}^2} + {\sigma ^2}}}} \right).
 \end{aligned}
 $$
+
 Problems:
+
 $$
 \begin{aligned}
 \mathop {\max }\limits_{ {\bf{p}}_1,{\bf{p}}_2} &{R_1} + {R_2}\\
@@ -149,6 +159,7 @@ $$
 ## 4. RSMA:
 Transmit signal: ${\bf{x}} = { {\bf{p}}_c}{s_c} + { {\bf{p}}_1}{s_1} + { {\bf{p}}_2}{s_2}$,
 Achievable rate of each user:
+
 $$
 \begin{aligned}
 {R_{c,1}} &= \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_1}{ {\bf{p}}_c}} \right|}^2}}}{ { { {\left| { { {\bf{h}}_1}{ {\bf{p}}_1}} \right|}^2}+{ {\left| { { {\bf{h}}_1}{ {\bf{p}}_2}} \right|}^2}+{\sigma ^2}}}} \right), \\
@@ -159,6 +170,7 @@ $$
 $$
 
 Problems:
+
 $$
 \begin{aligned}
 \mathop {\max }\limits_{ {\bf{p}}_c,{\bf{p}}_1,{\bf{p}}_2} & C_1 + {R_1} + C_2 + {R_2}\\
