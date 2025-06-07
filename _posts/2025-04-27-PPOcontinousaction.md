@@ -4,7 +4,7 @@ description: 这个博客是作者做完离散PPO，现在来尝试连续PPO写�
 author: Chen Zhang
 date: 2025-04-27 00:00:00 +0800
 categories: [DRL]
-tags: [Reinforcement Learning, PPO, Continuous Action Space]
+tags: [PPO, Continuous Action Space]
 pin: true
 math: true
 mermaid: true
