@@ -3,8 +3,8 @@ title: Contraction Mapping theorem和Robbins Monro theorem
 description: 这个博客主要介绍了Contraction Mapping theorem和Robbins Monro theorem。Contraction Mapping theorem用于判断递归数列的收敛性及求解其收敛值。Robbins Monro theorem则用于通过迭代方式求解逼近期望的统计均值或非线性方程的根。
 author: Chen Zhang
 date: 2025-05-11 00:00:00 +0800
-categories: [Blogging]
-tags: [Mathematics]
+categories: [Mathematics]
+tags: [CM, RM]
 pin: true
 math: true
 mermaid: true
