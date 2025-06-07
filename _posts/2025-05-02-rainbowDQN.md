@@ -3,8 +3,8 @@ title: Rainbow DQN的介绍，另外整理DQN/DDQN/Dueling DQN原理
 description: 其实对于DQN的改进不止Double和Dueling这两种，还有priority/multi-step/distribution/noisy，加上DQN本身一共7种DQN算法，把这7种算法结合起来就被称为彩虹DQN。目前我还需要去弄明白这几种改进思路。另外，今天才意识到要去看这三个算法出处，他们各自对应了一篇论文。他们的题目分别是 Human-level control through deep reinforcement learning, Deep Reinforcement Learning with Double Q-learning, Dueling Network Architectures for Deep Reinforcement Learning 待整理!
 author: Chen Zhang
 date: 2025-05-02 00:00:00 +0800
-categories: [Paper]
-tags: [Reinforcement Learning, DQN, Rainbow DQN]
+categories: [DRL]
+tags: [DQN, Rainbow DQN]
 pin: true
 math: true
 mermaid: true
