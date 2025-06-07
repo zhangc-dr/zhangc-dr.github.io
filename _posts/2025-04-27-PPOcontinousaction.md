@@ -3,7 +3,7 @@ title: 连续动作空间 PPO求解
 description: 这个博客是作者做完离散PPO，现在来尝试连续PPO写下的博客。还没看，这是我在探索PPO求解连续动作空间问题时候找到的一篇博客。希望有所帮助。这个博主应该很有意思。
 author: Chen Zhang
 date: 2025-04-27 00:00:00 +0800
-categories: [Blogging]
+categories: [DRL]
 tags: [Reinforcement Learning, PPO, Continuous Action Space]
 pin: true
 math: true
