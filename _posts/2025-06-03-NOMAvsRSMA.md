@@ -118,7 +118,8 @@ s.t.\quad &\left|{\bf{h}}_1{\bf{v}}\right| \ge \left|{\bf{h}}_2{\bf{v}}\right|,\
 $$
 
 
-起先，我把${R_{1,2}} \ge {R_2}$这个约束放进了上面这两个优化问题中，但是经过思考之后发现是多余的。注意到这两个个优化问题下面还有一个约束$\left|{\bf{h}}_1{\bf{v}}\right| \ge \left|{\bf{h}}_2{\bf{v}}\right|$，这个约束明确了user1和user2中user1是强用户。把这个约束代入到$R_2,R_{1,2}$的定义式中化简之后发现在这个约束下$R_2 \le R_{1,2}$恒成立。因此不必加上${R_{1,2}} \ge {R_2}$这个约束。
+> 起先，我把${R_{1,2}} \ge {R_2}$这个约束放进了上面这两个优化问题中，但是经过思考之后发现是多余的。注意到这两个个优化问题下面还有一个约束$abs\left({\bf{h}}_1 {\bf{v}}\right)\ge abs\left({\bf{h}}_1 {\bf{v}}\right)$，这个约束明确了user1和user2中user1是强用户。把这个约束代入到$R_2,R_{1,2}$的定义式中化简之后发现在这个约束下$R_2 \le R_{1,2}$恒成立。因此不必加上${R_{1,2}} \ge {R_2}$这个约束。
+{: .prompt-warning }
 
 > - 通过仿真得出一个经验：对于MISO NOMA系统，大多都是基于分组的方式来实现NOMA的。然而，天线数会影响MISO NOMA的性能。当天线数非常多时，某个角度下的波束必然很窄，如果此时同一组内的用户之间在相对基站的角度上差距较大的话，势必导致某一个甚至两个用户的接收信号微乎其微。但是如果天线数太少会导致分组受限，为了有效的实现组间干扰消除，必须保证足够的天线数提供空域自由度；而且如果分组受限，导致每个组内用户变多就会导致SIC复杂度增加以及错误传播问题加剧。那是不是MISO NOMA只能在较少天线的系统下才能运行？我认为不是，首先NOMA在用户间信道相关性较大时才能释放出来，所以一方面保证同一组的用户信道相关性足够强；另一方面如果基站天线足够多角度分辨率非常强时，可以通过减小基站在该组的分辨率；最后如果仍然不行，那索性把这个组的用户拆开，采用hybrid SDMA NOMA的方式为用户提供服务。
 针对这个天线太多导致波束太窄无法为角度差距大的用户们提供服务的问题在[Design of Downlink Hybrid NOMA Transmission](https://arxiv.org/pdf/2401.16965)这篇文中第三节第二段也提到了：‘Wenote that for conventional far-field beamforming, the concept of beam-sharing is straightforward, since many users can share the same beam-steering vector and hence can be served by a single far-field beam[1]. However, the accurate beamfocusing in near-fieldcommunications can make beam sharing difficult，which is another motivation for using near-field beamforming for the feasibility study of hybrid NOMA in downlink MISO systems.’。这段文字的意思是由于波束呈放射状发射出去，随着距离的增加，波束在远处所覆盖的范围会比在近处大。因此，当多个用户处于较远位置时，发射给他们同一个波束可以实现波束共享；但如果用户距离基站较近，波束的覆盖范围较小，用户之间的空间重叠度降低，此时实现波束共享就会变得困难。
