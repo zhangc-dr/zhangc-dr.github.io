@@ -5,7 +5,7 @@ author: Chen Zhang
 date: 2025-05-26 00:00:00 +0800
 categories: [wireless communications]
 tags: [dynamic env]
-pin: true
+pin: false
 math: true
 mermaid: true
 ---
