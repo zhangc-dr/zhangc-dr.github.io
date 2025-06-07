@@ -5,7 +5,7 @@ author: Chen Zhang
 date: 2025-05-11 00:00:00 +0800
 categories: [Mathematics]
 tags: [CM, RM]
-pin: true
+pin: false
 math: true
 mermaid: true
 ---
