@@ -4,7 +4,7 @@ description: 结合B站PPO推导视频与台湾李宏毅教授PPO课程的学习
 author: Chen Zhang
 date: 2025-04-22 00:00:00 +0800
 categories: [DRL]
-tags: [Reinforcement Learning, PPO, Q-learning, DQN, DDQN]
+tags: [PPO, Q-learning, DQN, DDQN]
 pin: true
 math: true
 mermaid: true
