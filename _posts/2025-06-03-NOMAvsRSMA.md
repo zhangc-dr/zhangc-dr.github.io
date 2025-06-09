@@ -209,7 +209,7 @@ $$
 #### 1.1 NOMA
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
-| ![Alt text](../assets/img/NOMAvsRSMA/noma_1.png){:height="200px" width="200px"} |![Alt text](../assets/img/NOMAvsRSMA/noma_5.png){:height="200px" width="200px"}|![Alt text](../assets/img/NOMAvsRSMA/noma_30.png){:height="200px" width="200px"}|
+| ![Alt text](../assets/img/NOMAvsRSMA/noma_1.png){:height="50px" width="50px"} |![Alt text](../assets/img/NOMAvsRSMA/noma_5.png){:height="50px" width="50px"}|![Alt text](../assets/img/NOMAvsRSMA/noma_30.png){:height="50px" width="50px"}|
 
 #### 1.2 SDMA
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
