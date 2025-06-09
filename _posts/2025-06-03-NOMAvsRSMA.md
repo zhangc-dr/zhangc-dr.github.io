@@ -219,7 +219,7 @@ $$
 #### 1.3 RSMA
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
-| RSMA |RSMA|RSMA|
+| ![Alt text](../assets/img/NOMAvsRSMA/rsma_1.png) |![Alt text](../assets/img/NOMAvsRSMA/rsma_5.png)|![Alt text](../assets/img/NOMAvsRSMA/rsma_30.png)|
 
 #### 1.4 NOMA
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
