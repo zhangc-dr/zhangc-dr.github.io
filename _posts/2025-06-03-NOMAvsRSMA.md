@@ -219,7 +219,7 @@ $$
 #### 1.3 RSMA
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
-| ![Alt text](../assets/img/NOMAvsRSMA/rsma_1.png) |![Alt text](../assets/img/NOMAvsRSMA/rsma_5.png)|![Alt text](../assets/img/NOMAvsRSMA/rsma_30.png)|
+| RSMA |RSMA|RSMA|
 
 #### 1.4 NOMA
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
@@ -274,7 +274,7 @@ RSMA 表现出极高的灵活性：在用户信道相关性弱时，可退化为
 #### 3 RSMA
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
-| ![Alt text](../assets/img/NOMAvsRSMA/rsma_1_0.5.png) |![Alt text](../assets/img/NOMAvsRSMA/rsma_5_0.5.png)|![Alt text](../assets/img/NOMAvsRSMA/rsma_30_0.5.png)|
+| RSMA |RSMA|RSMA|
 
 **注：RSMA的复杂度太高，导致空间搜索自由度太高，导致短时间无法获得合适的结果图，因此此处无法展示。**
 #### 4 NOMA
