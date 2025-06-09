@@ -1,6 +1,6 @@
 ---
 title: 到底RSMA和NOMA、SDMA相比谁更强？
-description: 本文探讨了两个问题：一是RSMA NOMA在不同用户信道相关性下的性能，二是信道相关性强时用户间距离对性能的影响。
+description: 本文探讨了两个问题：一是RSMA NOMA在不同用户信道相关性下的性能，二是信道相关性强时用户间距离对性能的影响。 
 author: Chen Zhang
 date: 2025-06-03 16:08:00 +0800
 categories: [wireless communications]
@@ -42,17 +42,16 @@ mermaid: true
 
 > - 自答3：在SISO NOMA中，通常根据信道强弱来判定用户的强弱；在MISO NOMA中，通常不会采用non-group-based NOMA而是采用Group NOMA，对于Group NOMA通常根据共享波束和各自信道的内积的大小来判定强弱用户。其实，如果组内用户信道质量相差较大的情况下也可以直接根据信道强弱来判定。
 {: .prompt-info }
-
-# Impact of User Channel Correlation and User Distance on the Performance of RSMA, SDMA, and NOMA Systems
-## 0. System setting:
+# Impact of User Channel Correlation and User Distance on the Performance of RSMA, SDMA, and NOMA Systems.
+## 1. System setting:
 ![System model](../assets/img/NOMAvsRSMA/NOMAvsRSMA.jpg)
 
 - System describtion:
 2 users. User 1 is stronger user. Only consider Los scenary.
 - System variable:
 The users’ angles relative to the base station, $\theta_1, \theta_2$; The number of transmit antennas at BS, N.
-
-## 1. SDMA: (Spatial domain)
+## 2. Four Multiple Access Techniques
+### 2.1. SDMA: (Spatial domain)
 Transmit signal: ${\bf{x}} = { {\bf{p}}_1}{s_1} + { {\bf{p}}_2}{s_2}$,
 Achievable rate of each user:
 
@@ -81,7 +80,7 @@ s.t. \quad & {\left| { { {\bf{p}}_1}} \right|^2} + {\left| { { {\bf{p}}_2}} \rig
 \end{aligned}
 $$
 
-## 2. Group-based NOMA: (Power domain), assume user1 is strong user.
+### 2.2. Group-based NOMA: (Power domain), assume user1 is strong user.
 Transmit signal: ${\bf{x}} = {P_1}{\bf{v}}{s_1} + {P_2}{\bf{v}}{s_2}$, where ${\bf{v}}$ denotes group beamer.
 Achievable rate of each user:
 
@@ -125,7 +124,7 @@ $$
 针对这个天线太多导致波束太窄无法为角度差距大的用户们提供服务的问题在[Design of Downlink Hybrid NOMA Transmission](https://arxiv.org/pdf/2401.16965)这篇文中第三节第二段也提到了：‘Wenote that for conventional far-field beamforming, the concept of beam-sharing is straightforward, since many users can share the same beam-steering vector and hence can be served by a single far-field beam[1]. However, the accurate beamfocusing in near-fieldcommunications can make beam sharing difficult，which is another motivation for using near-field beamforming for the feasibility study of hybrid NOMA in downlink MISO systems.’。这段文字的意思是由于波束呈放射状发射出去，随着距离的增加，波束在远处所覆盖的范围会比在近处大。因此，当多个用户处于较远位置时，发射给他们同一个波束可以实现波束共享；但如果用户距离基站较近，波束的覆盖范围较小，用户之间的空间重叠度降低，此时实现波束共享就会变得困难。
 {: .prompt-warning }
 
-## 3. Non-group-based NOMA: (Power domain and Spatial domain), assume user1 is strong user.
+### 2.3. Non-group-based NOMA: (Power domain and Spatial domain), assume user1 is strong user.
 Transmit signal: ${\bf{x}} = { {\bf{p}}_1}{s_1} + { {\bf{p}}_2}{s_2}$,
 Achievable rate of each user:
 
@@ -157,7 +156,7 @@ s.t. \quad & \left|{\bf{h}}_1{\bf{p}}_1\right|^2 \ge \left|{\bf{h}}_2{\bf{p}}_2\
 \end{aligned}
 $$
 
-## 4. RSMA:
+### 2.4. RSMA:
 Transmit signal: ${\bf{x}} = { {\bf{p}}_c}{s_c} + { {\bf{p}}_1}{s_1} + { {\bf{p}}_2}{s_2}$,
 Achievable rate of each user:
 
@@ -192,8 +191,8 @@ s.t. \quad & {R_c} = \min(R_{c,1},R_{c,2}),\\
 \end{aligned}
 $$
 
-## Simulation results: (rate region, xlabel:R1, ylabel:R2)
-### 0. simulation setting: 
+## 3. Simulation results: (rate region, xlabel:R1, ylabel:R2)
+### 3.0. simulation setting: 
 - 仿真过程中对波束能量约束中将不等式约束改为等式约束，使得基站满功率运行。发射天线数为3.
 
 ||SDMA|NOMA |RSMA|NG-NOMA|
@@ -205,27 +204,27 @@ $$
 
 **仿真特殊设定：在传统的 SISO NOMA 系统中，基站通常通过估计用户的信道增益来判断用户间的强弱关系，即基于信道质量将用户划分为“强用户”与“弱用户”。然而，在 MISO NOMA 系统中，用户强弱的判断不仅依赖于信道质量，还需综合考虑波束方向与空间特性。具体而言，尽管在某些情况下 User 1 的信道质量优于 User 2，但若波束主要指向 User 2，则实际接收信号强度可能使得 User 1 不再是“强用户”。为更准确反映实际通信情形，本文在 Group NOMA 仿真中引入了一个动态判定模块，该模块根据当前信道状态和波束方向联合判断谁为“强用户”，并据此生成相应的压缩编码信号。如图 2、图 6 和图 10 所示，图中新增的红色点表示系统在判定 User 2 为强用户时对应的两用户速率组合；相应地，蓝色点表示系统在判定 User 1 为强用户 时的速率结果。这一设置能够更全面地刻画 Group NOMA 在不同判定条件下的性能表现。相比之下，在 Non-group NOMA 的仿真中，并未引入类似的判定机制，而是始终假设 User 1 为强用户。其原因有二：一方面，由于 Non-group NOMA 不采用明确的用户分组与共享波束设计，强弱用户判定机制的引入较为复杂，难以实现；另一方面，从图 2、6 和 10 中可以观察到，在用户信道相关性较强的情况下，红色区域（User 2 为强用户）大多被蓝色区域（User 1 为强用户）所包围，即系统在 User 2 为强用户时的速率组合已被包含在 User 1 为强用户的情况中。因此，在对比各技术的性能时，我们主要关注系统所能达到的速率区域上界，故可合理忽略 User 2 为强用户的情况。（这两个原因是我自己的理解，待证实）**
 
-### 1. Impact of channel corelation (fixed channel factor: user1 1.0, user2 0.5)
+### 3.1. Impact of channel corelation (fixed channel factor: user1 1.0, user2 0.5)
 
-#### 1.1 NOMA
+#### 3.1.1 NOMA
 
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/noma_1.png) |![Alt text](../assets/img/NOMAvsRSMA/noma_5.png)|![Alt text](../assets/img/NOMAvsRSMA/noma_30.png)|
 
-#### 1.2 SDMA
+#### 3.1.2 SDMA
 
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/sdma_1.png) |![Alt text](../assets/img/NOMAvsRSMA/sdma_5.png)|![Alt text](../assets/img/NOMAvsRSMA/sdma_30.png)|
 
-#### 1.3 RSMA
+#### 3.1.3 RSMA
 
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/rsma_1.png) |![Alt text](../assets/img/NOMAvsRSMA/rsma_5.png)|![Alt text](../assets/img/NOMAvsRSMA/rsma_30.png)|
 
-#### 1.4 non-group NOMA
+#### 3.1.4 non-group NOMA
 
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
@@ -242,54 +241,54 @@ RSMA 表现出极高的灵活性：在用户信道相关性弱时，可退化为
 性能对比（当信道相关性很强时）：$RSMA \approx non \ group \ NOMA \ge NOMA >> SDMA$.
 {: .prompt-info  }
 
-### 2. Impact of user distance (fixed user's Loc:[-5,5])
-#### 2.1. NOMA
+### 3.2. Impact of user distance (fixed user's Loc:[-5,5])
+#### 3.2.1. NOMA
 
 |user2's channel factor=0.1| user2's channel factor=0.5| user2's channel factor=1.0|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/noma_5_0.1.png) |![Alt text](../assets/img/NOMAvsRSMA/noma_5_0.5.png)|![Alt text](../assets/img/NOMAvsRSMA/noma_5_1.png)|
 
-#### 2.2. SDMA
+#### 3.2.2. SDMA
 
 |user2's channel factor=0.1| user2's channel factor=0.5| user2's channel factor=1.0|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/sdma_5_0.1.png) |![Alt text](../assets/img/NOMAvsRSMA/sdma_5_0.5.png)|![Alt text](../assets/img/NOMAvsRSMA/sdma_5_1.png)|
 
-#### 2.3. RSMA
+#### 3.2.3. RSMA
 
 |user2's channel factor=0.1| user2's channel factor=0.5| user2's channel factor=1.0|
 |:--:|:--:|:--:|
 | RSMA |RSMA|RSMA|
 
 **注：RSMA的复杂度太高，导致空间搜索自由度太高，导致短时间无法获得合适的结果图，因此此处无法展示。**
-#### 2.4. non-group NOMA
+#### 3.2.4. non-group NOMA
 
 |user2's channel factor=0.1| user2's channel factor=0.5| user2's channel factor=1.0|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/ngnoma_5_0.1.png) |![Alt text](../assets/img/NOMAvsRSMA/ngnoma_5_0.5.png)|![Alt text](../assets/img/NOMAvsRSMA/ngnoma_5_1.png)|
 
-### 附录 Impact of channel corelation(Focus only on boundary points version)
+### 附录 A Impact of channel corelation(Focus only on boundary points version)
 **说明：这部分和第二部分一样，只不过这部分只关注边界点**
-#### 1 NOMA
+#### A.1 NOMA
 
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/noma_1_0.5.png) |![Alt text](../assets/img/NOMAvsRSMA/noma_5_0.5.png)|![Alt text](../assets/img/NOMAvsRSMA/noma_30_0.5.png)|
 
-#### 2 SDMA
+#### A.2 SDMA
 
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/sdma_1_0.5.png) |![Alt text](../assets/img/NOMAvsRSMA/sdma_5_0.5.png)|![Alt text](../assets/img/NOMAvsRSMA/sdma_30_0.5.png)|
 
-#### 3 RSMA
+#### A.3 RSMA
 
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
 | RSMA |RSMA|RSMA|
 
 **注：RSMA的复杂度太高，导致空间搜索自由度太高，导致短时间无法获得合适的结果图，因此此处无法展示。**
-#### 4 non-group NOMA
+#### A.4 non-group NOMA
 
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
