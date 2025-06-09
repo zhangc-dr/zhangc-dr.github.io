@@ -193,14 +193,14 @@ $$
 
 ## 3. Simulation results: (rate region, xlabel:R1, ylabel:R2)
 ### 3.0. simulation setting: 
-- 仿真过程中对波束能量约束中将不等式约束改为等式约束，使得基站满功率运行。发射天线数为3.
+- 仿真过程中对波束能量约束中将不等式约束改为等式约束，使得基站满功率运行，仿真中设定总功率为单位1。发射天线数为3.
 
 ||SDMA|NOMA |RSMA|NG-NOMA|
 |:--:|:--:|:--:|:--:|:--:|
 |variable|${\bf{p}}_1, {\bf{p}}_2$ | $P_1,P_2,{\bf{v}}$| ${\bf{p}}_c, {\bf{p}}_1, {\bf{p}}_2$ |${\bf{p}}_1, {\bf{p}}_2$|
 |free degree space|$\alpha, {\bf{v}}_1, {\bf{v}}_2$ | $\alpha,{\bf{v}}$| ${\alpha, \beta, \gamma,\bf{v}}_c, {\bf{v}}_1, {\bf{v}}_2$ |${\alpha, \bf{v}}_1, {\bf{v}}_2$|
 
-**表注说明：“Variable”行表示在优化问题中涉及的关键变量；“Free Degree Space”表示各多址技术在设计空间中的自由度。可以看出，RSMA 的自由度空间最大，意味着其在参数设计上最为灵活，但也带来了显著的实现复杂性。具体而言，对于 SDMA，$\alpha$ 表示两个波束的功率分配因子，${\bf{v}}_1$ 和 ${\bf{v}}_2$ 分别为归一化的波束方向向量；对于 NOMA，$\alpha$ 表示分配给用户1信号的功率，${\bf{v}}$ 为两个用户共享的波束方向；对于 RSMA，$\alpha$ 是分配给公有信息波束的功率因子，$\beta$ 是将剩余功率在 ${\bf{v}}_1$ 和 ${\bf{v}}_2$ 间的分配因子，$\gamma$ 是决定公有信息与私有信息比重的分配因子；对于 NG-NOMA，其变量设置与 SDMA 类似，即 $\alpha$ 作为功率分配因子，${\bf{v}}_1$ 和 ${\bf{v}}_2$ 为归一化波束向量。所有参数均满足以下约束：$\alpha, \beta, \gamma \in [0, 1]$，且${\bf{v}}_c,{\bf{v}}_1,{\bf{v}}_2$ 的模恒为1。在实验仿真中，$\alpha, \beta, \gamma$ 采用固定步长进行均匀采样，而 ${\bf{v}}_c, {\bf{v}}_1, {\bf{v}}_2$ 则通过在复高斯圆域中采样后归一化获得。由于 RSMA 的设计自由度远大于其他技术，导致其采样空间维度较高，进而在计算资源有限的情况下难以实现充分的参数遍历。这也可能导致 RSMA 的仿真性能与其理论性能存在一定偏差，实验结果未能完全反映其潜在的最优表现。**
+**表注说明：“Variable”行表示在优化问题中涉及的关键变量；“Free Degree Space”表示各多址技术在设计空间中的自由度。可以看出，RSMA 的自由度空间最大，意味着其在参数设计上最为灵活，但也带来了显著的实现复杂性。具体而言，对于 SDMA，$\alpha$ 表示分配给 ${\bf{v}}_1$ 的功率，$1-\alpha$ 表示分配给 ${\bf{v}}_2$ 的功率，${\bf{v}}_1$ 和 ${\bf{v}}_2$ 分别为归一化的波束方向向量；对于 NOMA，$\alpha$ 表示分配给用户1信号的功率，$1-\alpha$ 表示分配给用户2信号的功率，${\bf{v}}$ 为两个用户共享的波束方向；对于 RSMA，$\alpha$ 是分配给公有信息波束的功率，$\beta$ 是将剩余功率$1-\alpha$ 分配给 ${\bf{v}}_1$ 和 ${\bf{v}}_2$ 间的功率，$\gamma$ 是分配给user1的公有信息速率系数，$1-\gamma$ 是分配给user2的公有信息速率系数；对于 NG-NOMA，其变量设置与 SDMA 类似，即 $\alpha$ 作为功率分配因子，${\bf{v}}_1$ 和 ${\bf{v}}_2$ 为归一化波束向量。所有参数均满足以下约束：$\alpha, \beta, \gamma \in [0, 1]$，且${\bf{v}}_c,{\bf{v}}_1,{\bf{v}}_2$ 的模恒为1。在实验仿真中，$\alpha, \beta, \gamma$ 均采用固定步长进行均匀采样，而 ${\bf{v}}_c, {\bf{v}}_1, {\bf{v}}_2$ 则通过在复高斯圆域中采样后归一化获得。由于 RSMA 的设计自由度远大于其他技术，导致其采样空间维度较高，进而在计算资源有限的情况下难以实现充分的参数遍历。这也可能导致 RSMA 的仿真性能与其理论性能存在一定偏差，实验结果未能完全反映其潜在的最优表现。**
 
 **仿真特殊设定：在传统的 SISO NOMA 系统中，基站通常通过估计用户的信道增益来判断用户间的强弱关系，即基于信道质量将用户划分为“强用户”与“弱用户”。然而，在 MISO NOMA 系统中，用户强弱的判断不仅依赖于信道质量，还需综合考虑波束方向与空间特性。具体而言，尽管在某些情况下 User 1 的信道质量优于 User 2，但若波束主要指向 User 2，则实际接收信号强度可能使得 User 1 不再是“强用户”。为更准确反映实际通信情形，本文在 Group NOMA 仿真中引入了一个动态判定模块，该模块根据当前信道状态和波束方向联合判断谁为“强用户”，并据此生成相应的压缩编码信号。如图 2、图 6 和图 10 所示，图中新增的红色点表示系统在判定 User 2 为强用户时对应的两用户速率组合；相应地，蓝色点表示系统在判定 User 1 为强用户 时的速率结果。这一设置能够更全面地刻画 Group NOMA 在不同判定条件下的性能表现。相比之下，在 Non-group NOMA 的仿真中，并未引入类似的判定机制，而是始终假设 User 1 为强用户。其原因有二：一方面，由于 Non-group NOMA 不采用明确的用户分组与共享波束设计，强弱用户判定机制的引入较为复杂，难以实现；另一方面，从图 2、6 和 10 中可以观察到，在用户信道相关性较强的情况下，红色区域（User 2 为强用户）大多被蓝色区域（User 1 为强用户）所包围，即系统在 User 2 为强用户时的速率组合已被包含在 User 1 为强用户的情况中。因此，在对比各技术的性能时，我们主要关注系统所能达到的速率区域上界，故可合理忽略 User 2 为强用户的情况。（这两个原因是我自己的理解，待证实）**
 
@@ -258,37 +258,37 @@ RSMA 表现出极高的灵活性：在用户信道相关性弱时，可退化为
 
 |user2's channel factor=0.1| user2's channel factor=0.5| user2's channel factor=1.0|
 |:--:|:--:|:--:|
-| RSMA |RSMA|RSMA|
+| TODO |TODO|TODO|
 
-**注：RSMA的复杂度太高，导致空间搜索自由度太高，导致短时间无法获得合适的结果图，因此此处无法展示。**
+**注：RSMA的复杂度太高，导致空间搜索自由度太高，导致短时间无法获得合适的结果图，因此此处无法展示。希望后期提出更好的思路来绘制这系列速率区域仿真结果图。**
 #### 3.2.4. non-group NOMA
 
 |user2's channel factor=0.1| user2's channel factor=0.5| user2's channel factor=1.0|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/ngnoma_5_0.1.png) |![Alt text](../assets/img/NOMAvsRSMA/ngnoma_5_0.5.png)|![Alt text](../assets/img/NOMAvsRSMA/ngnoma_5_1.png)|
 
-### 附录 A Impact of channel corelation(Focus only on boundary points version)
+### 3.3 A Impact of channel corelation(Focus only on boundary points version)
 **说明：这部分和第二部分一样，只不过这部分只关注边界点**
-#### A.1 NOMA
+#### 3.3.1 NOMA
 
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/noma_1_0.5.png) |![Alt text](../assets/img/NOMAvsRSMA/noma_5_0.5.png)|![Alt text](../assets/img/NOMAvsRSMA/noma_30_0.5.png)|
 
-#### A.2 SDMA
+#### 3.3.2 SDMA
 
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/sdma_1_0.5.png) |![Alt text](../assets/img/NOMAvsRSMA/sdma_5_0.5.png)|![Alt text](../assets/img/NOMAvsRSMA/sdma_30_0.5.png)|
 
-#### A.3 RSMA
+#### 3.3.3 RSMA
 
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
-| RSMA |RSMA|RSMA|
+| TODO |TODO|TODO|
 
-**注：RSMA的复杂度太高，导致空间搜索自由度太高，导致短时间无法获得合适的结果图，因此此处无法展示。**
-#### A.4 non-group NOMA
+**注：RSMA的复杂度太高，导致空间搜索自由度太高，导致短时间无法获得合适的结果图，因此此处无法展示。希望后期提出更好的思路来绘制这系列速率区域仿真结果图。**
+#### 3.3.4 non-group NOMA
 
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
