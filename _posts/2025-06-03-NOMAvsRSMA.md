@@ -251,7 +251,7 @@ RSMA 表现出极高的灵活性：在用户信道相关性弱时，可退化为
 #### 2.3. RSMA
 |user2's channel factor=0.1| user2's channel factor=0.5| user2's channel factor=1.0|
 |:--:|:--:|:--:|
-| ![Alt text](../assets/img/NOMAvsRSMA/rsma_5_0.1.png) |![Alt text](../assets/img/NOMAvsRSMA/rsma_5_0.5.png)|![Alt text](../assets/img/NOMAvsRSMA/rsma_5_1.png)|
+| RSMA |RSMA|RSMA|
 
 **注：RSMA的复杂度太高，导致空间搜索自由度太高，导致短时间无法获得合适的结果图，因此此处无法展示。**
 #### 2.4. non-group NOMA
