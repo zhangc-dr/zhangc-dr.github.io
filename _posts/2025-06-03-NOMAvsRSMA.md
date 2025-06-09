@@ -208,26 +208,25 @@ $$
 ### 1. Impact of channel corelation (fixed channel factor: user1 1.0, user2 0.5)
 
 #### 1.1 NOMA
-|users' angle [-1,1]| users' angle [-5,5]|
-|:--:|:--:|
-| ![Alt text](../assets/img/NOMAvsRSMA/sdma_1.png)|![Alt text](../assets/img/NOMAvsRSMA/sdma_5.png)|
 
-#### 1.1 NOMA
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
 | <img src="../assets/img/NOMAvsRSMA/noma_1.png" width="200" alt="NOMA angle [-1,1]"/>|<img src="../assets/img/NOMAvsRSMA/noma_5.png" width="200" alt="NOMA angle [-1,1]"/>|<img src="../assets/img/NOMAvsRSMA/noma_30.png" width="200" alt="NOMA angle [-1,1]"/>|
 
 #### 1.2 SDMA
+
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/sdma_1.png) |![Alt text](../assets/img/NOMAvsRSMA/sdma_5.png)|![Alt text](../assets/img/NOMAvsRSMA/sdma_30.png)|
 
 #### 1.3 RSMA
+
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/rsma_1.png) |![Alt text](../assets/img/NOMAvsRSMA/rsma_5.png)|![Alt text](../assets/img/NOMAvsRSMA/rsma_30.png)|
 
 #### 1.4 NOMA
+
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/ng_noma_1.png) |![Alt text](../assets/img/NOMAvsRSMA/ng_noma_5.png)|![Alt text](../assets/img/NOMAvsRSMA/ng_noma_30.png)|
@@ -245,22 +244,26 @@ RSMA 表现出极高的灵活性：在用户信道相关性弱时，可退化为
 
 ### 2. Impact of user distance (fixed user's Loc:[-5,5])
 #### 2.1. NOMA
+
 |user2's channel factor=0.1| user2's channel factor=0.5| user2's channel factor=1.0|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/noma_5_0.1.png) |![Alt text](../assets/img/NOMAvsRSMA/noma_5_0.5.png)|![Alt text](../assets/img/NOMAvsRSMA/noma_5_1.png)|
 
 #### 2.2. SDMA
+
 |user2's channel factor=0.1| user2's channel factor=0.5| user2's channel factor=1.0|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/sdma_5_0.1.png) |![Alt text](../assets/img/NOMAvsRSMA/sdma_5_0.5.png)|![Alt text](../assets/img/NOMAvsRSMA/sdma_5_1.png)|
 
 #### 2.3. RSMA
+
 |user2's channel factor=0.1| user2's channel factor=0.5| user2's channel factor=1.0|
 |:--:|:--:|:--:|
 | RSMA |RSMA|RSMA|
 
 **注：RSMA的复杂度太高，导致空间搜索自由度太高，导致短时间无法获得合适的结果图，因此此处无法展示。**
 #### 2.4. non-group NOMA
+
 |user2's channel factor=0.1| user2's channel factor=0.5| user2's channel factor=1.0|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/ngnoma_5_0.1.png) |![Alt text](../assets/img/NOMAvsRSMA/ngnoma_5_0.5.png)|![Alt text](../assets/img/NOMAvsRSMA/ngnoma_5_1.png)|
@@ -268,22 +271,26 @@ RSMA 表现出极高的灵活性：在用户信道相关性弱时，可退化为
 ### 附录 Impact of channel corelation(Focus only on boundary points version)
 **说明：这部分和第二部分一样，只不过这部分只关注边界点**
 #### 1 NOMA
+
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/noma_1_0.5.png) |![Alt text](../assets/img/NOMAvsRSMA/noma_5_0.5.png)|![Alt text](../assets/img/NOMAvsRSMA/noma_30_0.5.png)|
 
 #### 2 SDMA
+
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/sdma_1_0.5.png) |![Alt text](../assets/img/NOMAvsRSMA/sdma_5_0.5.png)|![Alt text](../assets/img/NOMAvsRSMA/sdma_30_0.5.png)|
 
 #### 3 RSMA
+
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
 | RSMA |RSMA|RSMA|
 
 **注：RSMA的复杂度太高，导致空间搜索自由度太高，导致短时间无法获得合适的结果图，因此此处无法展示。**
 #### 4 NOMA
+
 |users' angle [-1,1]| users' angle [-5,5]| users' angle [-30,30]|
 |:--:|:--:|:--:|
 | ![Alt text](../assets/img/NOMAvsRSMA/ngnoma_1_0.5.png) |![Alt text](../assets/img/NOMAvsRSMA/ngnoma_5_0.5.png)|![Alt text](../assets/img/NOMAvsRSMA/ngnoma_30_0.5.png)|
