@@ -1,6 +1,6 @@
 ---
 title: 到底RSMA和NOMA、SDMA相比谁更强？
-description: 本文探讨了两个问题：一是RSMA NOMA在不同用户信道相关性下的性能，二是信道相关性强时用户间距离对性能的影响。 
+description: 本文探讨了两个问题：一是RSMA NOMA SDMA在不同用户信道相关性下的性能对比，二是信道相关性强时用户间距离对RSMA NOMA SDMA性能的影响。 
 author: Chen Zhang
 date: 2025-06-03 16:08:00 +0800
 categories: [wireless communications]
