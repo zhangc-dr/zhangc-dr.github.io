@@ -84,7 +84,7 @@ $$
 {\bf{W}} = {\rm{pinv}}({ {\bf{G}}^H})diag\left( {\left[ {\left| { { {\bf{g}}_1}} \right|,\left| { { {\bf{g}}_2}} \right|, \cdots ,\left| { { {\bf{g}}_K}} \right|} \right]} \right),
 $$
 
-根据[The Matrix Cookbook](http://matrixcookbook.com)书中第21页可以求出${\rm{pinv}}({ {\bf{G}}^H}) = {\bf{G}}{({ {\bf{G}}^H}{\bf{G}})^{ - 1}}$，故
+根据[The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf)书中第21页可以求出${\rm{pinv}}({ {\bf{G}}^H}) = {\bf{G}}{({ {\bf{G}}^H}{\bf{G}})^{ - 1}}$，故
 $$
 {\bf{W}} = {\bf{G}}{({ {\bf{G}}^H}{\bf{G}})^{ - 1}}diag\left( {\left[ {\left| { { {\bf{g}}_1}} \right|,\left| { { {\bf{g}}_2}} \right|, \cdots ,\left| { { {\bf{g}}_K}} \right|} \right]} \right).
 $$
@@ -114,5 +114,6 @@ $$
 RSMA achieves a significant system throughput gain due to the additional common message component.
 
 - Adaptive rate-splitting, user clustering, and antenna selection are effective in large-scale RSMA deployments to balance spatial multiplexing gain, diversity gain, and reduce complexity and power consumption.
+
 
 
