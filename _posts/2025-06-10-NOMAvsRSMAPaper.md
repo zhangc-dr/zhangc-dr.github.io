@@ -9,6 +9,7 @@ pin: false
 math: true
 mermaid: true
 ---
+{% raw %}
 
 ## Paper1: [On Performance of Downlink THz-Based Rate-Splitting Multiple-Access (RSMA): Is it Always Better Than NOMA?](https://arxiv.org/abs/2305.07361) - Thai-Hoc Vu
 ### 1. 文章所要解决的核心问题
@@ -29,7 +30,8 @@ mermaid: true
 |(4). In vehicular networks, the common stream shares group messages like safety alerts, while the private stream ensures secure delivery of personal data such as certificates or signatures.|
 
 #### 2. RSMA发射信号的定义
-The transmit signal is $x = \sqrt {{\alpha_c}{P_t}} {{\bf{w}}_{c} }{s_c} + \sum\limits_k {\sqrt {{\alpha _k}{P_t}} {{\bf{w}}_k}{s_k}} $, where  $P_t$ is the transmit power, ${{\bf{w}}_{c} },{{\bf{w}}_k}$ are the precoding weights for $s_c,s_k$, with ${\left\| {{{\bf{w}}_{c} }} \right\|^2} = {\left\| {{{\bf{w}}_k}} \right\|^2} = 1$. And $\alpha_c$, $\alpha_k$ denote the power allocation coefficients of $s_c$ and $s_k$, respectively, with ${\alpha _c} + \sum\limits_k {{\alpha _k}}  = 1$.
+The transmit signal is {% raw %}$x = \sqrt{\alpha_c P_t}\,\mathbf{w}_c s_c + \sum_k \sqrt{\alpha_k P_t}\,\mathbf{w}_k s_k${% endraw %}
+, where  $P_t$ is the transmit power, ${{\bf{w}}_{c} },{{\bf{w}}_k}$ are the precoding weights for $s_c,s_k$, with ${\left\| {{{\bf{w}}_{c} }} \right\|^2} = {\left\| {{{\bf{w}}_k}} \right\|^2} = 1$. And $\alpha_c$, $\alpha_k$ denote the power allocation coefficients of $s_c$ and $s_k$, respectively, with ${\alpha _c} + \sum\limits_k {{\alpha _k}}  = 1$.
 
 #### 3. 文中考虑1-layer RS以及imperfect SIC
 该部分需要了解作者这样书写表达的优点，以及了解如何建模imperfect SIC.
@@ -115,3 +117,4 @@ RSMA achieves a significant system throughput gain due to the additional common 
 
 - Adaptive rate-splitting, user clustering, and antenna selection are effective in large-scale RSMA deployments to balance spatial multiplexing gain, diversity gain, and reduce complexity and power consumption.
 
+{% endraw %}
