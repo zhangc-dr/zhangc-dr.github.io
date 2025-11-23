@@ -45,7 +45,7 @@ The channel model is based on Rayleigh model, which ${\mathbf{h}}_k=\sqrt{\beta_
 The SINRs to decode $s_c$ and $s_k$ are respectively expressed as
 $$
 \begin{aligned}
-\gamma _c^k &= \frac{ { {\alpha _c}\rho {\beta _k}{ {\left| { { {\mathbf{g}}^H_k}{ {\mathbf{w}}_{\mathop{\rm c}\nolimits} }} \right|}^2}}}{ {\sum { {\alpha _j}\rho {\beta _k}{ {\left| { { {\mathbf{g}}^H_k}{ {\mathbf{w}}_j}} \right|}^2}}  + 1}},\\
+\gamma _c^k &= \frac{ { {\alpha _c}\rho {\beta _k}{ {\left| { { {\mathbf{g}}^H_k}{ {\mathbf{w}}_c }} \right|}^2}}}{ {\sum { {\alpha _j}\rho {\beta _k}{ {\left| { { {\mathbf{g}}^H_k}{ {\mathbf{w}}_j}} \right|}^2}}  + 1}},\\
 \gamma _p^k &= \frac{ { {\alpha _k}\rho {\beta _k}{ {\left| { { {\mathbf{g}}^H_k}{ {\mathbf{w}}_k}} \right|}^2}}}{ {\varsigma {\alpha _c}\rho {\beta _k}{ {\left| { { {\mathbf{g}}^H_k}{ {\mathbf{w}}_c}} \right|}^2} + \sum\nolimits_{j \ne k} { {\alpha _j}\rho {\beta _k}{ {\left| { { {\mathbf{g}}^H_k}{ {\mathbf{w}}_j}} \right|}^2}}  + 1}},
 \end{aligned}
 $$
@@ -402,6 +402,7 @@ RSMA 表现出极高的灵活性：在用户信道相关性弱时，可退化为
 
 ## 4. Conclusion
 能肯定的是，SDMA严格受用户信道相关性影响，在信道相关性弱时能表现出很不错的性能，反之，非常差；group NOMA也受信道相关性的影响但是似乎没有SDMA敏感，group NOMA在信道相关性强时表现更好，而且用户信道大尺度衰落差距大时group NOMA的性能才能真正被凸显出来。不能肯定的是，通过现有的理解和分析，个人仍然无法给出本文所要探讨的问题的答案，无法准确的说出RSMA/NOMA/SDMA到底哪个技术更强。non-group NOMA和RSMA都是比较稳健的方法，可能更能适应当下复杂的通信环境。但non-group NOMA的可行性可能比RSMA更低，因为他依赖强用户执行K-1次SIC，受SIC error propagation的影响可能会严重削弱non-group NOMA的性能。所以，综上所述，RSMA可能更能胜任未来mmWave通信，当然RSMA也存在明显的弊端，就是基站在发送接收信号时复杂度会比较高。
+
 
 
 
