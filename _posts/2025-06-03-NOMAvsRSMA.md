@@ -67,7 +67,8 @@ ZF会要求 $ {\mathbf{g}}^H_k{\mathbf{w}}_j=0,\forall j \ne k, {\mathbf{g}}^H_k
 首先，把所有gk和wk分别合成一个矩阵${\mathbf{G}}{\rm{ = }}\left[ { { {\mathbf{g}}_1},{ {\mathbf{g}}_2}, \cdots ,{ {\mathbf{g}}_K}} \right] \in {C^{Nt \times K}},{\mathbf{W}} = \left[ { { {\mathbf{w}}_1},{ {\mathbf{w}}_2}, \cdots ,{ {\mathbf{w}}_K}} \right] \in {C^{Nt \times K}}$. 然后有
 
 $$
-{\mathbf{G}}^H{\mathbf{W}} = \begin{bmatrix}
+\begin{aligned}
+{\mathbf{G}}^H{\mathbf{W}} &= \begin{bmatrix}
 {\mathbf{g}}_1^H \\
 {\mathbf{g}}_2^H \\
 \vdots \\
@@ -76,20 +77,21 @@ $$
 \begin{bmatrix}
 {\mathbf{w}}_1 & {\mathbf{w}}_2 & \cdots & {\mathbf{w}}_K
 \end{bmatrix} 
-= \begin{bmatrix}
+&= \begin{bmatrix}
 {\mathbf{g}}_1^H{\mathbf{w}}_1 & {\mathbf{g}}_1^H{\mathbf{w}}_2 & \cdots & {\mathbf{g}}_1^H{\mathbf{w}}_K \\
 {\mathbf{g}}_2^H{\mathbf{w}}_1 & {\mathbf{g}}_2^H{\mathbf{w}}_2 & \cdots & {\mathbf{g}}_2^H{\mathbf{w}}_K \\
 \vdots & \vdots & \vdots & \vdots \\
 {\mathbf{g}}_K^H{\mathbf{w}}_1 & {\mathbf{g}}_K^H{\mathbf{w}}_2 & \cdots & {\mathbf{g}}_K^H{\mathbf{w}}_K
 \end{bmatrix} 
 \\
-= \begin{bmatrix}
+&= \begin{bmatrix}
 \left| {\mathbf{g}}_1 \right| & 0 & \cdots & 0 \\
 0 & \left| {\mathbf{g}}_2 \right| & \cdots & 0 \\
 \vdots & \vdots & \vdots & \vdots \\
 0 & 0 & \cdots & \left| {\mathbf{g}}_K \right|
 \end{bmatrix} 
 = \text{diag}\left( \left[ \left| {\mathbf{g}}_1 \right|, \left| {\mathbf{g}}_2 \right|, \cdots, \left| {\mathbf{g}}_K \right| \right] \right)
+\end{aligned}
 $$
 
 那么如何求解W呢？这就是一个线性代数问题了，然而很明显这个方程无解或者无唯一解，无法通过以前理解的现代知识求解。这里就需要引入伪逆。那么W就为
@@ -407,6 +409,7 @@ RSMA 表现出极高的灵活性：在用户信道相关性弱时，可退化为
 
 ## 4. Conclusion
 能肯定的是，SDMA严格受用户信道相关性影响，在信道相关性弱时能表现出很不错的性能，反之，非常差；group NOMA也受信道相关性的影响但是似乎没有SDMA敏感，group NOMA在信道相关性强时表现更好，而且用户信道大尺度衰落差距大时group NOMA的性能才能真正被凸显出来。不能肯定的是，通过现有的理解和分析，个人仍然无法给出本文所要探讨的问题的答案，无法准确的说出RSMA/NOMA/SDMA到底哪个技术更强。non-group NOMA和RSMA都是比较稳健的方法，可能更能适应当下复杂的通信环境。但non-group NOMA的可行性可能比RSMA更低，因为他依赖强用户执行K-1次SIC，受SIC error propagation的影响可能会严重削弱non-group NOMA的性能。所以，综上所述，RSMA可能更能胜任未来mmWave通信，当然RSMA也存在明显的弊端，就是基站在发送接收信号时复杂度会比较高。
+
 
 
 
