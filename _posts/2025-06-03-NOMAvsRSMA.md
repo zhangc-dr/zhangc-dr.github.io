@@ -90,7 +90,7 @@ $$
 \vdots & \vdots & \vdots & \vdots \\
 0 & 0 & \cdots & \left| {\mathbf{g}}_K \right|
 \end{bmatrix} 
-= \text{diag}\left( \left[ \left| {\mathbf{g}}_1 \right|, \left| {\mathbf{g}}_2 \right|, \cdots, \left| {\mathbf{g}}_K \right| \right] \right)
+&= \text{diag}\left( \left[ \left| {\mathbf{g}}_1 \right|, \left| {\mathbf{g}}_2 \right|, \cdots, \left| {\mathbf{g}}_K \right| \right] \right)
 \end{aligned}
 $$
 
@@ -109,14 +109,11 @@ $$
 $ \mathbf{g}_k^H \mathbf{w}_j = 0, \forall j, \quad \mathbf{g}_k^H \mathbf{w}_c = |\mathbf{g}_k| $；
 在 $\gamma_p^k$ 中需要满足
 $ \mathbf{g}_k^H \mathbf{w}_c = \mathbf{g}_k^H \mathbf{w}_j = 0, \forall j \ne k, \quad \mathbf{g}_k^H \mathbf{w}_k = |\mathbf{g}_k| $。  
-
-而 $ \mathbf{g}_k^H \mathbf{w}_k = |\mathbf{g}_k| $ 和 $ \mathbf{g}_k^H \mathbf{w}_k = 0 $，以及 $ \mathbf{g}_k^H \mathbf{w}_c = 0 $ 和 $ \mathbf{g}_k^H \mathbf{w}_c = |\mathbf{g}_k| $ 是矛盾的，因此 RSMA 中不可能完全消除所有干扰。  
-
+而 $ \mathbf{g}_k^H \mathbf{w}_k = \left|\mathbf{g}_k \right| $ 和 $ \mathbf{g}_k^H \mathbf{w}_k = 0 $，以及 $ \mathbf{g}_k^H \mathbf{w}_c = 0 $ 和 $ \mathbf{g}_k^H \mathbf{w}_c = |\mathbf{g}_k| $ 是矛盾的，因此 RSMA 中不可能完全消除所有干扰。  
 本文中处理方式是优先满足 $\gamma_c^k$ 和 $\gamma_p^k$ 分子部分两向量平行，即
 $ \mathbf{g}_k^H \mathbf{w}_c = |\mathbf{g}_k|, \quad \mathbf{g}_k^H \mathbf{w}_k = |\mathbf{g}_k| $，
 然后再尽可能消除干扰
 $ \mathbf{g}_k^H \mathbf{w}_c = |\mathbf{g}_k|, \quad \mathbf{g}_k^H \mathbf{w}_j = 0, \forall j \ne k $。  
-
 接下来先求解 $ \mathbf{w}_k $，与 SDMA 中求解 $ \mathbf{w}_k $ 的方式相同，先将所有 $ \mathbf{w}_k $ 合成一个矩阵
 $ \mathbf{W} = [ \mathbf{w}_1, \mathbf{w}_2, \cdots, \mathbf{w}_K ] \in \mathbb{C}^{N_t \times K} $，
 然后利用上面 SDMA 推导出的结果即可得到。
@@ -423,6 +420,7 @@ RSMA 表现出极高的灵活性：在用户信道相关性弱时，可退化为
 
 ## 4. Conclusion
 能肯定的是，SDMA严格受用户信道相关性影响，在信道相关性弱时能表现出很不错的性能，反之，非常差；group NOMA也受信道相关性的影响但是似乎没有SDMA敏感，group NOMA在信道相关性强时表现更好，而且用户信道大尺度衰落差距大时group NOMA的性能才能真正被凸显出来。不能肯定的是，通过现有的理解和分析，个人仍然无法给出本文所要探讨的问题的答案，无法准确的说出RSMA/NOMA/SDMA到底哪个技术更强。non-group NOMA和RSMA都是比较稳健的方法，可能更能适应当下复杂的通信环境。但non-group NOMA的可行性可能比RSMA更低，因为他依赖强用户执行K-1次SIC，受SIC error propagation的影响可能会严重削弱non-group NOMA的性能。所以，综上所述，RSMA可能更能胜任未来mmWave通信，当然RSMA也存在明显的弊端，就是基站在发送接收信号时复杂度会比较高。
+
 
 
 
