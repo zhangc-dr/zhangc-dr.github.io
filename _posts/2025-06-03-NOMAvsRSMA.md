@@ -38,13 +38,7 @@ mermaid: true
 |(4). In vehicular networks, the common stream shares group messages like safety alerts, while the private stream ensures secure delivery of personal data such as certificates or signatures.|
 
 #### b.2 RSMA发射信号的定义
-{% raw %}
-The transmit signal is \( x = \sqrt{\alpha_c P_t}\,\mathbf{w}_c s_c + \sum_{k} \sqrt{\alpha_k P_t}\,\mathbf{w}_k s_k \), 
-where \(P_t\) is the transmit power, \(\mathbf{w}_c,\mathbf{w}_k\) are the precoding weights 
-with \(\|\mathbf{w}_c\|^2 = \|\mathbf{w}_k\|^2 = 1\). 
-And \(\alpha_c\), \(\alpha_k\) denote the power allocation coefficients with 
-\(\alpha_c + \sum_k \alpha_k = 1\).
-{% endraw %}
+The transmit signal is$x = \sqrt{ {\alpha_c}{P_t} }{ {\mathbf{w}}_c }{s_c} + \sum_k \sqrt{ {\alpha_k}{P_t} }{ {\mathbf{w}}_k }{s_k} $, where $P_t$ is the transmit power, ${ {\mathbf{w}}_{c} },{ {\mathbf{w}}_k}$ are the precoding weights for $s_c,s_k$, with ${\left\| { { {\mathbf{w}}_{c} }} \right\|^2} = {\left\| { { {\mathbf{w}}_k}} \right\|^2} = 1$. And $\alpha_c$, $\alpha_k$ denote the power allocation coefficients of $s_c$ and $s_k$, respectively, with ${\alpha _c} + \sum\limits_k { {\alpha _k}} = 1$.
 
 
 #### b.3 文中考虑1-layer RS以及imperfect SIC
@@ -410,6 +404,7 @@ RSMA 表现出极高的灵活性：在用户信道相关性弱时，可退化为
 
 ## 4. Conclusion
 能肯定的是，SDMA严格受用户信道相关性影响，在信道相关性弱时能表现出很不错的性能，反之，非常差；group NOMA也受信道相关性的影响但是似乎没有SDMA敏感，group NOMA在信道相关性强时表现更好，而且用户信道大尺度衰落差距大时group NOMA的性能才能真正被凸显出来。不能肯定的是，通过现有的理解和分析，个人仍然无法给出本文所要探讨的问题的答案，无法准确的说出RSMA/NOMA/SDMA到底哪个技术更强。non-group NOMA和RSMA都是比较稳健的方法，可能更能适应当下复杂的通信环境。但non-group NOMA的可行性可能比RSMA更低，因为他依赖强用户执行K-1次SIC，受SIC error propagation的影响可能会严重削弱non-group NOMA的性能。所以，综上所述，RSMA可能更能胜任未来mmWave通信，当然RSMA也存在明显的弊端，就是基站在发送接收信号时复杂度会比较高。
+
 
 
 
