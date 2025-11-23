@@ -37,16 +37,16 @@ mermaid: true
 |(4). In vehicular networks, the common stream shares group messages like safety alerts, while the private stream ensures secure delivery of personal data such as certificates or signatures.|
 
 #### b.2 RSMA发射信号的定义
-The transmit signal is $x = \sqrt { {\alpha _c}{P_t}} { {\bf{w}}_{\mathop{\rm c}\nolimits} }{s_c} + \sum\limits_k {\sqrt { {\alpha _k}{P_t}} { {\bf{w}}_k}{s_k}} $, where  $P_t$ is the transmit power, ${ {\bf{w}}_{c} },{ {\bf{w}}_k}$ are the precoding weights for $s_c,s_k$, with ${\left\| { { {\bf{w}}_{c} }} \right\|^2} = {\left\| { { {\bf{w}}_k}} \right\|^2} = 1$. And $\alpha_c$, $\alpha_k$ denote the power allocation coefficients of $s_c$ and $s_k$, respectively, with ${\alpha _c} + \sum\limits_k { {\alpha _k}}  = 1$.
+The transmit signal is $x = \sqrt { {\alpha _c}{P_t}} { {\mathbf{w}}_{\mathop{\rm c}\nolimits} }{s_c} + \sum\limits_k {\sqrt { {\alpha _k}{P_t}} { {\mathbf{w}}_k}{s_k}} $, where  $P_t$ is the transmit power, ${ {\mathbf{w}}_{c} },{ {\mathbf{w}}_k}$ are the precoding weights for $s_c,s_k$, with ${\left\| { { {\mathbf{w}}_{c} }} \right\|^2} = {\left\| { { {\mathbf{w}}_k}} \right\|^2} = 1$. And $\alpha_c$, $\alpha_k$ denote the power allocation coefficients of $s_c$ and $s_k$, respectively, with ${\alpha _c} + \sum\limits_k { {\alpha _k}}  = 1$.
 
 #### b.3 文中考虑1-layer RS以及imperfect SIC
 该部分需要了解作者这样书写表达的优点，以及了解如何建模imperfect SIC.
-The channel model is based on Rayleigh model, which ${\bf{h}}_k=\sqrt{\beta_k}{\bf{g}}_k$.
+The channel model is based on Rayleigh model, which ${\mathbf{h}}_k=\sqrt{\beta_k}{\mathbf{g}}_k$.
 The SINRs to decode $s_c$ and $s_k$ are respectively expressed as
 $$
 \begin{aligned}
-\gamma _c^k &= \frac{ { {\alpha _c}\rho {\beta _k}{ {\left| { { {\bf{g}}^H_k}{ {\bf{w}}_{\mathop{\rm c}\nolimits} }} \right|}^2}}}{ {\sum { {\alpha _j}\rho {\beta _k}{ {\left| { { {\bf{g}}^H_k}{ {\bf{w}}_j}} \right|}^2}}  + 1}},\\
-\gamma _p^k &= \frac{ { {\alpha _k}\rho {\beta _k}{ {\left| { { {\bf{g}}^H_k}{ {\bf{w}}_k}} \right|}^2}}}{ {\varsigma {\alpha _c}\rho {\beta _k}{ {\left| { { {\bf{g}}^H_k}{ {\bf{w}}_c}} \right|}^2} + \sum\nolimits_{j \ne k} { {\alpha _j}\rho {\beta _k}{ {\left| { { {\bf{g}}^H_k}{ {\bf{w}}_j}} \right|}^2}}  + 1}},
+\gamma _c^k &= \frac{ { {\alpha _c}\rho {\beta _k}{ {\left| { { {\mathbf{g}}^H_k}{ {\mathbf{w}}_{\mathop{\rm c}\nolimits} }} \right|}^2}}}{ {\sum { {\alpha _j}\rho {\beta _k}{ {\left| { { {\mathbf{g}}^H_k}{ {\mathbf{w}}_j}} \right|}^2}}  + 1}},\\
+\gamma _p^k &= \frac{ { {\alpha _k}\rho {\beta _k}{ {\left| { { {\mathbf{g}}^H_k}{ {\mathbf{w}}_k}} \right|}^2}}}{ {\varsigma {\alpha _c}\rho {\beta _k}{ {\left| { { {\mathbf{g}}^H_k}{ {\mathbf{w}}_c}} \right|}^2} + \sum\nolimits_{j \ne k} { {\alpha _j}\rho {\beta _k}{ {\left| { { {\mathbf{g}}^H_k}{ {\mathbf{w}}_j}} \right|}^2}}  + 1}},
 \end{aligned}
 $$
 where $\varsigma \in [0,1)$ is the imperfect factor and $\rho = P/\sigma^2$.
@@ -55,11 +55,11 @@ where $\varsigma \in [0,1)$ is the imperfect factor and $\rho = P/\sigma^2$.
 ZF的目的是尽可能消除MUI，以Nt天线基站和K单天线用户的SDMA系统为例，第k个用户解码自己信息的信噪比：
 
 $$
-\gamma _k = \frac{ { {\alpha _k}\rho {\beta _k}{ {\left| { { {\bf{g}}^H_k}{ {\bf{w}}_k}} \right|}^2}}}{ {\sum_{j \ne k} { {\alpha _j}\rho {\beta _k}{ {\left| { { {\bf{g}}^H_k}{ {\bf{w}}_j}} \right|}^2}}  + 1}}.
+\gamma _k = \frac{ { {\alpha _k}\rho {\beta _k}{ {\left| { { {\mathbf{g}}^H_k}{ {\mathbf{w}}_k}} \right|}^2}}}{ {\sum_{j \ne k} { {\alpha _j}\rho {\beta _k}{ {\left| { { {\mathbf{g}}^H_k}{ {\mathbf{w}}_j}} \right|}^2}}  + 1}}.
 $$
 
-ZF会要求 $ {\bf{g}}^H_k{\bf{w}}_j=0,\forall j \ne k, {\bf{g}}^H_k{\bf{w}}_k=\left| {\bf{g}}_k\right|$. 那么要如何得到这个${\bf{w}}_k$呢？
-首先，把所有gk和wk分别合成一个矩阵${\bf{G}}{\rm{ = }}\left[ { { {\bf{g}}_1},{ {\bf{g}}_2}, \cdots ,{ {\bf{g}}_K}} \right] \in {C^{Nt \times K}},{\bf{W}} = \left[ { { {\bf{w}}_1},{ {\bf{w}}_2}, \cdots ,{ {\bf{w}}_K}} \right] \in {C^{Nt \times K}}$. 然后有
+ZF会要求 $ {\mathbf{g}}^H_k{\mathbf{w}}_j=0,\forall j \ne k, {\mathbf{g}}^H_k{\mathbf{w}}_k=\left| {\mathbf{g}}_k\right|$. 那么要如何得到这个${\mathbf{w}}_k$呢？
+首先，把所有gk和wk分别合成一个矩阵${\mathbf{G}}{\rm{ = }}\left[ { { {\mathbf{g}}_1},{ {\mathbf{g}}_2}, \cdots ,{ {\mathbf{g}}_K}} \right] \in {C^{Nt \times K}},{\mathbf{W}} = \left[ { { {\mathbf{w}}_1},{ {\mathbf{w}}_2}, \cdots ,{ {\mathbf{w}}_K}} \right] \in {C^{Nt \times K}}$. 然后有
 
 $$
 {\mathbf{G}}^H{\mathbf{W}} = \begin{bmatrix}
@@ -89,26 +89,26 @@ $$
 
 那么如何求解W呢？这就是一个线性代数问题了，然而很明显这个方程无解或者无唯一解，无法通过以前理解的现代知识求解。这里就需要引入伪逆。那么W就为
 $$
-{\bf{W}} = {\rm{pinv}}({ {\bf{G}}^H})diag\left( {\left[ {\left| { { {\bf{g}}_1}} \right|,\left| { { {\bf{g}}_2}} \right|, \cdots ,\left| { { {\bf{g}}_K}} \right|} \right]} \right),
+{\mathbf{W}} = {\rm{pinv}}({ {\mathbf{G}}^H})diag\left( {\left[ {\left| { { {\mathbf{g}}_1}} \right|,\left| { { {\mathbf{g}}_2}} \right|, \cdots ,\left| { { {\mathbf{g}}_K}} \right|} \right]} \right),
 $$
 
-根据[The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf)书中第21页可以求出${\rm{pinv}}({ {\bf{G}}^H}) = {\bf{G}}{({ {\bf{G}}^H}{\bf{G}})^{ - 1}}$，故
+根据[The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf)书中第21页可以求出${\rm{pinv}}({ {\mathbf{G}}^H}) = {\mathbf{G}}{({ {\mathbf{G}}^H}{\mathbf{G}})^{ - 1}}$，故
 $$
-{\bf{W}} = {\bf{G}}{({ {\bf{G}}^H}{\bf{G}})^{ - 1}}diag\left( {\left[ {\left| { { {\bf{g}}_1}} \right|,\left| { { {\bf{g}}_2}} \right|, \cdots ,\left| { { {\bf{g}}_K}} \right|} \right]} \right).
+{\mathbf{W}} = {\mathbf{G}}{({ {\mathbf{G}}^H}{\mathbf{G}})^{ - 1}}diag\left( {\left[ {\left| { { {\mathbf{g}}_1}} \right|,\left| { { {\mathbf{g}}_2}} \right|, \cdots ,\left| { { {\mathbf{g}}_K}} \right|} \right]} \right).
 $$
 这就是wk的求解全过程了。
 
-在RSMA中由于引入了新的待优化变量wc使得问题变得更加复杂。要想完全消除干扰，在$\gamma_c^k$中需要满足$ {\bf{g}}^H_k{\bf{w}}_j=0,\forall j, {\bf{g}}^H_k{\bf{w}}_c=\left| {\bf{g}}_k\right|$；在$\gamma_p^k$中需要满足$ {\bf{g}}^H_k{\bf{w}}_c={\bf{g}}^H_k{\bf{w}}_j=0,\forall j \ne k, {\bf{g}}^H_k{\bf{w}}_k=\left| {\bf{g}}_k\right|$。而${\bf{g}}^H_k{\bf{w}}_k=\left| {\bf{g}}_k\right|$和${\bf{g}}^H_k{\bf{w}}_k=0$，以及${\bf{g}}^H_k{\bf{w}}_c=0$和${\bf{g}}^H_k{\bf{w}}_c=\left| {\bf{g}}_k\right|$是矛盾的，因此RSMA中不可能完全消除所有干扰。而本文中处理方式是优先满足$\gamma_c^k$和$\gamma_p^k$分子部分两向量平行，则为$ {\bf{g}}^H_k{\bf{w}}_c=\left| {\bf{g}}_k\right|, {\bf{g}}^H_k{\bf{w}}_k=\left| {\bf{g}}_k\right|$，然后再尽可能消除干扰$ {\bf{g}}^H_k{\bf{w}}_c=\left| {\bf{g}}_k\right|, {\bf{g}}^H_k{\bf{w}}_j=0, \forall j \ne k$. 接下来先求解wk，和SDMA中求解wk的方式一样，先将所有wk合成一个矩阵${\bf{W}} = \left[ { { {\bf{w}}_1},{ {\bf{w}}_2}, \cdots ,{ {\bf{w}}_K}} \right] \in {C^{Nt \times K}}$，然后利用上面SDMA推导出的结果可以得到
+在RSMA中由于引入了新的待优化变量wc使得问题变得更加复杂。要想完全消除干扰，在$\gamma_c^k$中需要满足$ {\mathbf{g}}^H_k{\mathbf{w}}_j=0,\forall j, {\mathbf{g}}^H_k{\mathbf{w}}_c=\left| {\mathbf{g}}_k\right|$；在$\gamma_p^k$中需要满足$ {\mathbf{g}}^H_k{\mathbf{w}}_c={\mathbf{g}}^H_k{\mathbf{w}}_j=0,\forall j \ne k, {\mathbf{g}}^H_k{\mathbf{w}}_k=\left| {\mathbf{g}}_k\right|$。而${\mathbf{g}}^H_k{\mathbf{w}}_k=\left| {\mathbf{g}}_k\right|$和${\mathbf{g}}^H_k{\mathbf{w}}_k=0$，以及${\mathbf{g}}^H_k{\mathbf{w}}_c=0$和${\mathbf{g}}^H_k{\mathbf{w}}_c=\left| {\mathbf{g}}_k\right|$是矛盾的，因此RSMA中不可能完全消除所有干扰。而本文中处理方式是优先满足$\gamma_c^k$和$\gamma_p^k$分子部分两向量平行，则为$ {\mathbf{g}}^H_k{\mathbf{w}}_c=\left| {\mathbf{g}}_k\right|, {\mathbf{g}}^H_k{\mathbf{w}}_k=\left| {\mathbf{g}}_k\right|$，然后再尽可能消除干扰$ {\mathbf{g}}^H_k{\mathbf{w}}_c=\left| {\mathbf{g}}_k\right|, {\mathbf{g}}^H_k{\mathbf{w}}_j=0, \forall j \ne k$. 接下来先求解wk，和SDMA中求解wk的方式一样，先将所有wk合成一个矩阵${\mathbf{W}} = \left[ { { {\mathbf{w}}_1},{ {\mathbf{w}}_2}, \cdots ,{ {\mathbf{w}}_K}} \right] \in {C^{Nt \times K}}$，然后利用上面SDMA推导出的结果可以得到
 
 $$
-{\bf{W}} = {\bf{G}}{({ {\bf{G}}^H}{\bf{G}})^{ - 1}}diag\left( {\left[ {\left| { { {\bf{g}}_1}} \right|,\left| { { {\bf{g}}_2}} \right|, \cdots ,\left| { { {\bf{g}}_K}} \right|} \right]} \right).
+{\mathbf{W}} = {\mathbf{G}}{({ {\mathbf{G}}^H}{\mathbf{G}})^{ - 1}}diag\left( {\left[ {\left| { { {\mathbf{g}}_1}} \right|,\left| { { {\mathbf{g}}_2}} \right|, \cdots ,\left| { { {\mathbf{g}}_K}} \right|} \right]} \right).
 $$
 
-然后求解wc，由于需满足$ {\bf{g}}^H_k{\bf{w}}_c=\left| {\bf{g}}_k\right|$，很自然地，当$ {\bf{w}}_c=\sum {\bf{w}}_k$时不仅能满足这个等式，而且还有利于每个用户解码公有信息。至此，wc和wk就都能被求出来了。$\gamma_c^k$和$\gamma_p^k$可以被简化为
+然后求解wc，由于需满足$ {\mathbf{g}}^H_k{\mathbf{w}}_c=\left| {\mathbf{g}}_k\right|$，很自然地，当$ {\mathbf{w}}_c=\sum {\mathbf{w}}_k$时不仅能满足这个等式，而且还有利于每个用户解码公有信息。至此，wc和wk就都能被求出来了。$\gamma_c^k$和$\gamma_p^k$可以被简化为
 $$
 \begin{aligned}
-\gamma _c^k &= \frac{ { {\alpha _c}\rho {\beta _k}{ {\left| { { {\bf{g}}_k}} \right|}^2}}}{ { { {\alpha _k}\rho {\beta _k}{ {\left| { { {\bf{g}}_k}} \right|}^2}}  + 1}},
-\gamma _p^k &= \frac{ { {\alpha _k}\rho {\beta _k}{ {\left| { {\bf{g}}_k} \right|}^2}}}{ {\varsigma {\alpha _c}\rho {\beta _k}{ {\left| { {\bf{g}}_k} \right|}^2} + 1}}.
+\gamma _c^k &= \frac{ { {\alpha _c}\rho {\beta _k}{ {\left| { { {\mathbf{g}}_k}} \right|}^2}}}{ { { {\alpha _k}\rho {\beta _k}{ {\left| { { {\mathbf{g}}_k}} \right|}^2}}  + 1}},
+\gamma _p^k &= \frac{ { {\alpha _k}\rho {\beta _k}{ {\left| { {\mathbf{g}}_k} \right|}^2}}}{ {\varsigma {\alpha _c}\rho {\beta _k}{ {\left| { {\mathbf{g}}_k} \right|}^2} + 1}}.
 \end{aligned}
 $$
 
@@ -143,7 +143,7 @@ RSMA achieves a significant system throughput gain due to the additional common 
 那么在设计同一组用户的发射信号时，功率分配因子的设定往往是需要给弱用户分配更多的能量。然而，Multi antenna场景中，该怎么去设计这个功率分配因子呢？
 [Optimal User Pairing for Downlink Non-Orthogonal Multiple Access (NOMA)](https://arxiv.org/pdf/1812.11490) 这篇文章中考虑了一个SISO NOMA的系统，自然而然的，用户的强弱就要根据信道强弱来判定；
 [Design of Downlink Hybrid NOMA Transmission](https://arxiv.org/pdf/2401.16965)这篇文章似乎是考虑了MISO NOMA，好像提到了综合考虑信道和波束来判断用户的强弱，而不是仅考虑信道强弱。
-[A Minorization-Maximization Method for Optimizing Sum Rate in the Downlink of Non-Orthogonal Multiple Access Systems](https://arxiv.org/pdf/1505.05735) 这篇文章讨论了single cluster MISO NOMA。文中判定用户强弱的依据不仅是信道强弱还包括基站的发射波束。在这个博客所考虑的2 users场景，根据$\left|{\bf{h}}_1{\bf{w}}_1\right|$和$\left|{\bf{h}}_2{\bf{w}}_2\right|$的大小关系判定谁是强用户。但文章中其实也说了解码顺序是可以预先设定好，然后根据这个顺序反过来调整强弱用户，进而调整波束。不一定完全按照先明确强弱用户，然后才确定用户顺序的方式。
+[A Minorization-Maximization Method for Optimizing Sum Rate in the Downlink of Non-Orthogonal Multiple Access Systems](https://arxiv.org/pdf/1505.05735) 这篇文章讨论了single cluster MISO NOMA。文中判定用户强弱的依据不仅是信道强弱还包括基站的发射波束。在这个博客所考虑的2 users场景，根据$\left|{\mathbf{h}}_1{\mathbf{w}}_1\right|$和$\left|{\mathbf{h}}_2{\mathbf{w}}_2\right|$的大小关系判定谁是强用户。但文章中其实也说了解码顺序是可以预先设定好，然后根据这个顺序反过来调整强弱用户，进而调整波束。不一定完全按照先明确强弱用户，然后才确定用户顺序的方式。
 {: .prompt-warning }
 
 > - 自答3：在SISO NOMA中，通常根据信道强弱来判定用户的强弱；在MISO NOMA中，通常不会采用non-group-based NOMA而是采用Group NOMA，对于Group NOMA通常根据共享波束和各自信道的内积的大小来判定强弱用户。其实，如果组内用户信道质量相差较大的情况下也可以直接根据信道强弱来判定。
@@ -158,13 +158,13 @@ RSMA achieves a significant system throughput gain due to the additional common 
 The users’ angles relative to the base station, $\theta_1, \theta_2$; The number of transmit antennas at BS, N.
 ## 2. Four Multiple Access Techniques
 ### 2.1. SDMA: (Spatial domain)
-Transmit signal: ${\bf{x}} = { {\bf{p}}_1}{s_1} + { {\bf{p}}_2}{s_2}$,
+Transmit signal: ${\mathbf{x}} = { {\mathbf{p}}_1}{s_1} + { {\mathbf{p}}_2}{s_2}$,
 Achievable rate of each user:
 
 $$
 \begin{aligned}
-{R_1} = \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_1}{ {\bf{p}}_1}} \right|}^2}}}{ { { {\left| { { {\bf{h}}_1}{ {\bf{p}}_2}} \right|}^2}+{\sigma ^2}}}} \right), \\
-{R_2} = \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_2}{ {\bf{p}}_2}} \right|}^2}}}{ { { {\left| { { {\bf{h}}_2}{ {\bf{p}}_1}} \right|}^2} + {\sigma ^2}}}} \right).
+{R_1} = \log \left( {1 + \frac{ { { {\left| { { {\mathbf{h}}_1}{ {\mathbf{p}}_1}} \right|}^2}}}{ { { {\left| { { {\mathbf{h}}_1}{ {\mathbf{p}}_2}} \right|}^2}+{\sigma ^2}}}} \right), \\
+{R_2} = \log \left( {1 + \frac{ { { {\left| { { {\mathbf{h}}_2}{ {\mathbf{p}}_2}} \right|}^2}}}{ { { {\left| { { {\mathbf{h}}_2}{ {\mathbf{p}}_1}} \right|}^2} + {\sigma ^2}}}} \right).
 \end{aligned}
 $$
 
@@ -172,29 +172,29 @@ Problems:
 
 $$
 \begin{aligned}
-\mathop {\max }\limits_{ { {\bf{p}}_1},{ {\bf{p}}_2}} &{R_1} + {R_2}\\
+\mathop {\max }\limits_{ { {\mathbf{p}}_1},{ {\mathbf{p}}_2}} &{R_1} + {R_2}\\
 s.t.\quad &{R_1} \ge {\eta _1}\\
 & {R_2} \ge {\eta _2}\\
-&  {\left| { { {\bf{p}}_1}} \right|^2} + {\left| { { {\bf{p}}_2}} \right|^2} \le {P_t}
+&  {\left| { { {\mathbf{p}}_1}} \right|^2} + {\left| { { {\mathbf{p}}_2}} \right|^2} \le {P_t}
 \end{aligned},
 $$
 
 $$
 \begin{aligned}
-\mathop {\max }\limits_{ { {\bf{p}}_1},{ {\bf{p}}_2}} \mathop {\min }\limits_k &{R_k}\\
-s.t. \quad & {\left| { { {\bf{p}}_1}} \right|^2} + {\left| { { {\bf{p}}_2}} \right|^2} \le {P_t}
+\mathop {\max }\limits_{ { {\mathbf{p}}_1},{ {\mathbf{p}}_2}} \mathop {\min }\limits_k &{R_k}\\
+s.t. \quad & {\left| { { {\mathbf{p}}_1}} \right|^2} + {\left| { { {\mathbf{p}}_2}} \right|^2} \le {P_t}
 \end{aligned}
 $$
 
 ### 2.2. Group-based NOMA: (Power domain), assume user1 is strong user.
-Transmit signal: ${\bf{x}} = {P_1}{\bf{v}}{s_1} + {P_2}{\bf{v}}{s_2}$, where ${\bf{v}}$ denotes group beamer.
+Transmit signal: ${\mathbf{x}} = {P_1}{\mathbf{v}}{s_1} + {P_2}{\mathbf{v}}{s_2}$, where ${\mathbf{v}}$ denotes group beamer.
 Achievable rate of each user:
 
 $$
 \begin{aligned}
-{R_2} &= \log \left( {1 + \frac{ { {P_2}{ {\left| { { {\bf{h}}_2}{\bf{v}}} \right|}^2}}}{ { {P_1}{ {\left| { { {\bf{h}}_2}{\bf{v}}} \right|}^2} + {\sigma ^2}}}} \right),\\
-{R_1} &= \log \left( {1 + \frac{ { {P_1}{ {\left| { { {\bf{h}}_1}{\bf{v}}} \right|}^2}}}{ { {\sigma ^2}}}} \right), \\
-{R_{1,2}} &= \log \left( {1 + \frac{ { {P_2}{ {\left| { { {\bf{h}}_1}{\bf{v}}} \right|}^2}}}{ { {P_1}{ {\left| { { {\bf{h}}_1}{\bf{v}}} \right|}^2} + {\sigma ^2}}}} \right).
+{R_2} &= \log \left( {1 + \frac{ { {P_2}{ {\left| { { {\mathbf{h}}_2}{\mathbf{v}}} \right|}^2}}}{ { {P_1}{ {\left| { { {\mathbf{h}}_2}{\mathbf{v}}} \right|}^2} + {\sigma ^2}}}} \right),\\
+{R_1} &= \log \left( {1 + \frac{ { {P_1}{ {\left| { { {\mathbf{h}}_1}{\mathbf{v}}} \right|}^2}}}{ { {\sigma ^2}}}} \right), \\
+{R_{1,2}} &= \log \left( {1 + \frac{ { {P_2}{ {\left| { { {\mathbf{h}}_1}{\mathbf{v}}} \right|}^2}}}{ { {P_1}{ {\left| { { {\mathbf{h}}_1}{\mathbf{v}}} \right|}^2} + {\sigma ^2}}}} \right).
 \end{aligned}
 $$
 
@@ -202,11 +202,11 @@ Problems:
 
 $$
 \begin{aligned}
-\mathop {\max }\limits_{ {P_1},{P_2},{\bf{v}}} &{R_1} + {R_2}\\
-s.t. \quad &\left|{\bf{h}}_1{\bf{v}}\right| \ge \left|{\bf{h}}_2{\bf{v}}\right|,\\
+\mathop {\max }\limits_{ {P_1},{P_2},{\mathbf{v}}} &{R_1} + {R_2}\\
+s.t. \quad &\left|{\mathbf{h}}_1{\mathbf{v}}\right| \ge \left|{\mathbf{h}}_2{\mathbf{v}}\right|,\\
 &{R_1} \ge {\eta _1},\\
 &{R_2} \ge {\eta _2},\\
-&{\left| {\bf{v}} \right|^2} = 1,\\
+&{\left| {\mathbf{v}} \right|^2} = 1,\\
 &{P_1} + {P_2} \le {P_t},\\
 & {P_1},{P_2} \ge 0
 \end{aligned}
@@ -214,9 +214,9 @@ $$
 
 $$
 \begin{aligned}
-\mathop {\max }\limits_{ {P_1},{P_2},{\bf{v}}} \mathop {\min }\limits_k &{R_k}\\
-s.t.\quad &\left|{\bf{h}}_1{\bf{v}}\right| \ge \left|{\bf{h}}_2{\bf{v}}\right|,\\
-&{\left| {\bf{v}} \right|^2} = 1,\\
+\mathop {\max }\limits_{ {P_1},{P_2},{\mathbf{v}}} \mathop {\min }\limits_k &{R_k}\\
+s.t.\quad &\left|{\mathbf{h}}_1{\mathbf{v}}\right| \ge \left|{\mathbf{h}}_2{\mathbf{v}}\right|,\\
+&{\left| {\mathbf{v}} \right|^2} = 1,\\
 &{P_1} + {P_2} \le {P_t},\\
 & {P_1},{P_2} \ge 0.
 \end{aligned}
@@ -231,14 +231,14 @@ $$
 {: .prompt-warning }
 
 ### 2.3. Non-group-based NOMA: (Power domain and Spatial domain), assume user1 is strong user.
-Transmit signal: ${\bf{x}} = { {\bf{p}}_1}{s_1} + { {\bf{p}}_2}{s_2}$,
+Transmit signal: ${\mathbf{x}} = { {\mathbf{p}}_1}{s_1} + { {\mathbf{p}}_2}{s_2}$,
 Achievable rate of each user:
 
 $$
 \begin{aligned}
-{R_2} &= \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_2}{\bf{p}}_2} \right|}^2}}}{ { { {\left| { { {\bf{h}}_2}{\bf{p}}_1} \right|}^2} + {\sigma ^2}}}} \right),\\
-{R_1} &= \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_1}{\bf{p}}_1} \right|}^2}}}{ { {\sigma ^2}}}} \right), \\
-{R_{1,2}} &= \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_1}{\bf{p}}_2} \right|}^2}}}{ { { {\left| { { {\bf{h}}_1}{\bf{p}}_1} \right|}^2} + {\sigma ^2}}}} \right).
+{R_2} &= \log \left( {1 + \frac{ { { {\left| { { {\mathbf{h}}_2}{\mathbf{p}}_2} \right|}^2}}}{ { { {\left| { { {\mathbf{h}}_2}{\mathbf{p}}_1} \right|}^2} + {\sigma ^2}}}} \right),\\
+{R_1} &= \log \left( {1 + \frac{ { { {\left| { { {\mathbf{h}}_1}{\mathbf{p}}_1} \right|}^2}}}{ { {\sigma ^2}}}} \right), \\
+{R_{1,2}} &= \log \left( {1 + \frac{ { { {\left| { { {\mathbf{h}}_1}{\mathbf{p}}_2} \right|}^2}}}{ { { {\left| { { {\mathbf{h}}_1}{\mathbf{p}}_1} \right|}^2} + {\sigma ^2}}}} \right).
 \end{aligned}
 $$
 
@@ -246,32 +246,32 @@ Problems:
 
 $$
 \begin{aligned}
-\mathop {\max }\limits_{ {\bf{p}}_1,{\bf{p}}_2} &{R_1} + {R_2}\\
-s.t. \quad &\left|{\bf{h}}_1{\bf{p}}_1\right|^2 \ge \left|{\bf{h}}_2{\bf{p}}_2\right|^2,\\
+\mathop {\max }\limits_{ {\mathbf{p}}_1,{\mathbf{p}}_2} &{R_1} + {R_2}\\
+s.t. \quad &\left|{\mathbf{h}}_1{\mathbf{p}}_1\right|^2 \ge \left|{\mathbf{h}}_2{\mathbf{p}}_2\right|^2,\\
 &{R_1} \ge {\eta _1},\\
 &{R_2} \ge {\eta _2},\\
-& {\left| { { {\bf{p}}_1}} \right|^2} + {\left| { { {\bf{p}}_2}} \right|^2} \le {P_t}
+& {\left| { { {\mathbf{p}}_1}} \right|^2} + {\left| { { {\mathbf{p}}_2}} \right|^2} \le {P_t}
 \end{aligned},
 $$
 
 $$
 \begin{aligned}
-\mathop {\max } \limits_{ {\bf{p}}_1,{\bf{p}}_2} \mathop {\min }\limits_k  &{R_k}\\
-s.t. \quad & \left|{\bf{h}}_1{\bf{p}}_1\right|^2 \ge \left|{\bf{h}}_2{\bf{p}}_2\right|^2,\\
-&{\left| { { {\bf{p}}_1}} \right|^2} + {\left| { { {\bf{p}}_2}} \right|^2} \le {P_t}
+\mathop {\max } \limits_{ {\mathbf{p}}_1,{\mathbf{p}}_2} \mathop {\min }\limits_k  &{R_k}\\
+s.t. \quad & \left|{\mathbf{h}}_1{\mathbf{p}}_1\right|^2 \ge \left|{\mathbf{h}}_2{\mathbf{p}}_2\right|^2,\\
+&{\left| { { {\mathbf{p}}_1}} \right|^2} + {\left| { { {\mathbf{p}}_2}} \right|^2} \le {P_t}
 \end{aligned}
 $$
 
 ### 2.4. RSMA:
-Transmit signal: ${\bf{x}} = { {\bf{p}}_c}{s_c} + { {\bf{p}}_1}{s_1} + { {\bf{p}}_2}{s_2}$,
+Transmit signal: ${\mathbf{x}} = { {\mathbf{p}}_c}{s_c} + { {\mathbf{p}}_1}{s_1} + { {\mathbf{p}}_2}{s_2}$,
 Achievable rate of each user:
 
 $$
 \begin{aligned}
-{R_{c,1}} &= \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_1}{ {\bf{p}}_c}} \right|}^2}}}{ { { {\left| { { {\bf{h}}_1}{ {\bf{p}}_1}} \right|}^2}+{ {\left| { { {\bf{h}}_1}{ {\bf{p}}_2}} \right|}^2}+{\sigma ^2}}}} \right), \\
-{R_{c,2}} &= \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_2}{ {\bf{p}}_c}} \right|}^2}}}{ { { {\left| { { {\bf{h}}_2}{ {\bf{p}}_1}} \right|}^2}+{ {\left| { { {\bf{h}}_2}{ {\bf{p}}_2}} \right|}^2}+{\sigma ^2}}}} \right), \\
-{R_{p,1}} &= \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_1}{ {\bf{p}}_1}} \right|}^2}}}{ { { {\left| { { {\bf{h}}_1}{ {\bf{p}}_2}} \right|}^2}+{\sigma ^2}}}} \right), \\
-{R_{p,2}} &= \log \left( {1 + \frac{ { { {\left| { { {\bf{h}}_2}{ {\bf{p}}_2}} \right|}^2}}}{ { { {\left| { { {\bf{h}}_2}{ {\bf{p}}_1}} \right|}^2} + {\sigma ^2}}}} \right).
+{R_{c,1}} &= \log \left( {1 + \frac{ { { {\left| { { {\mathbf{h}}_1}{ {\mathbf{p}}_c}} \right|}^2}}}{ { { {\left| { { {\mathbf{h}}_1}{ {\mathbf{p}}_1}} \right|}^2}+{ {\left| { { {\mathbf{h}}_1}{ {\mathbf{p}}_2}} \right|}^2}+{\sigma ^2}}}} \right), \\
+{R_{c,2}} &= \log \left( {1 + \frac{ { { {\left| { { {\mathbf{h}}_2}{ {\mathbf{p}}_c}} \right|}^2}}}{ { { {\left| { { {\mathbf{h}}_2}{ {\mathbf{p}}_1}} \right|}^2}+{ {\left| { { {\mathbf{h}}_2}{ {\mathbf{p}}_2}} \right|}^2}+{\sigma ^2}}}} \right), \\
+{R_{p,1}} &= \log \left( {1 + \frac{ { { {\left| { { {\mathbf{h}}_1}{ {\mathbf{p}}_1}} \right|}^2}}}{ { { {\left| { { {\mathbf{h}}_1}{ {\mathbf{p}}_2}} \right|}^2}+{\sigma ^2}}}} \right), \\
+{R_{p,2}} &= \log \left( {1 + \frac{ { { {\left| { { {\mathbf{h}}_2}{ {\mathbf{p}}_2}} \right|}^2}}}{ { { {\left| { { {\mathbf{h}}_2}{ {\mathbf{p}}_1}} \right|}^2} + {\sigma ^2}}}} \right).
 \end{aligned}
 $$
 
@@ -279,21 +279,21 @@ Problems:
 
 $$
 \begin{aligned}
-\mathop {\max }\limits_{ {\bf{p}}_c,{\bf{p}}_1,{\bf{p}}_2} & C_1 + {R_1} + C_2 + {R_2}\\
+\mathop {\max }\limits_{ {\mathbf{p}}_c,{\mathbf{p}}_1,{\mathbf{p}}_2} & C_1 + {R_1} + C_2 + {R_2}\\
 s.t. \quad &{R_c} = \min(R_{c,1},R_{c,2}),\\
 & C_1 + C_2 = R_c, \\
 &C_1 + {R_{p,1}} \ge {\eta _1},\\
 &C_2 + {R_{p,2}} \ge {\eta _2},\\
-& {\left| { { {\bf{p}}_1}} \right|^2} + {\left| { { {\bf{p}}_2}} \right|^2} \le {P_t}
+& {\left| { { {\mathbf{p}}_1}} \right|^2} + {\left| { { {\mathbf{p}}_2}} \right|^2} \le {P_t}
 \end{aligned},
 $$
 
 $$
 \begin{aligned}
-\mathop {\max } \limits_{ {\bf{p}}_c,{\bf{p}}_1,{\bf{p}}_2} \mathop {\min }\limits_k  &{C_k + R_k}\\
+\mathop {\max } \limits_{ {\mathbf{p}}_c,{\mathbf{p}}_1,{\mathbf{p}}_2} \mathop {\min }\limits_k  &{C_k + R_k}\\
 s.t. \quad & {R_c} = \min(R_{c,1},R_{c,2}),\\
 & C_1 + C_2 = R_c, \\
-& {\left| { { {\bf{p}}_1}} \right|^2} + {\left| { { {\bf{p}}_2}} \right|^2} \le {P_t}
+& {\left| { { {\mathbf{p}}_1}} \right|^2} + {\left| { { {\mathbf{p}}_2}} \right|^2} \le {P_t}
 \end{aligned}
 $$
 
@@ -303,10 +303,10 @@ $$
 
 ||SDMA|NOMA |RSMA|NG-NOMA|
 |:--:|:--:|:--:|:--:|:--:|
-|variable|${\bf{p}}_1, {\bf{p}}_2$ | $P_1,P_2,{\bf{v}}$| ${\bf{p}}_c, {\bf{p}}_1, {\bf{p}}_2$ |${\bf{p}}_1, {\bf{p}}_2$|
-|free degree space|$\alpha, {\bf{v}}_1, {\bf{v}}_2$ | $\alpha,{\bf{v}}$| ${\alpha, \beta, \gamma,\bf{v}}_c, {\bf{v}}_1, {\bf{v}}_2$ |${\alpha, \bf{v}}_1, {\bf{v}}_2$|
+|variable|${\mathbf{p}}_1, {\mathbf{p}}_2$ | $P_1,P_2,{\mathbf{v}}$| ${\mathbf{p}}_c, {\mathbf{p}}_1, {\mathbf{p}}_2$ |${\mathbf{p}}_1, {\mathbf{p}}_2$|
+|free degree space|$\alpha, {\mathbf{v}}_1, {\mathbf{v}}_2$ | $\alpha,{\mathbf{v}}$| ${\alpha, \beta, \gamma,\mathbf{v}}_c, {\mathbf{v}}_1, {\mathbf{v}}_2$ |${\alpha, \mathbf{v}}_1, {\mathbf{v}}_2$|
 
-**表注说明：“Variable”行表示在优化问题中涉及的关键变量；“Free Degree Space”表示各多址技术在设计空间中的自由度。可以看出，RSMA 的自由度空间最大，意味着其在参数设计上最为灵活，但也带来了显著的实现复杂性。具体而言，对于 SDMA，$\alpha$ 表示分配给 ${\bf{v}}_1$ 的功率，$1-\alpha$ 表示分配给 ${\bf{v}}_2$ 的功率，${\bf{v}}_1$ 和 ${\bf{v}}_2$ 分别为归一化的波束方向向量；对于 NOMA，$\alpha$ 表示分配给用户1信号的功率，$1-\alpha$ 表示分配给用户2信号的功率，${\bf{v}}$ 为两个用户共享的波束方向；对于 RSMA，$\alpha$ 是分配给公有信息波束的功率，$\beta$ 是将剩余功率$1-\alpha$ 分配给 ${\bf{v}}_1$ 和 ${\bf{v}}_2$ 间的功率，$\gamma$ 是分配给user1的公有信息速率系数，$1-\gamma$ 是分配给user2的公有信息速率系数；对于 NG-NOMA，其变量设置与 SDMA 类似，即 $\alpha$ 作为功率分配因子，${\bf{v}}_1$ 和 ${\bf{v}}_2$ 为归一化波束向量。所有参数均满足以下约束：$\alpha, \beta, \gamma \in [0, 1]$，且${\bf{v}}_c,{\bf{v}}_1,{\bf{v}}_2$ 的模恒为1。在实验仿真中，$\alpha, \beta, \gamma$ 均采用固定步长进行均匀采样，而 ${\bf{v}}_c, {\bf{v}}_1, {\bf{v}}_2$ 则通过在复高斯圆域中采样后归一化获得。由于 RSMA 的设计自由度远大于其他技术，导致其采样空间维度较高，进而在计算资源有限的情况下难以实现充分的参数遍历。这也可能导致 RSMA 的仿真性能与其理论性能存在一定偏差，实验结果未能完全反映其潜在的最优表现。**
+**表注说明：“Variable”行表示在优化问题中涉及的关键变量；“Free Degree Space”表示各多址技术在设计空间中的自由度。可以看出，RSMA 的自由度空间最大，意味着其在参数设计上最为灵活，但也带来了显著的实现复杂性。具体而言，对于 SDMA，$\alpha$ 表示分配给 ${\mathbf{v}}_1$ 的功率，$1-\alpha$ 表示分配给 ${\mathbf{v}}_2$ 的功率，${\mathbf{v}}_1$ 和 ${\mathbf{v}}_2$ 分别为归一化的波束方向向量；对于 NOMA，$\alpha$ 表示分配给用户1信号的功率，$1-\alpha$ 表示分配给用户2信号的功率，${\mathbf{v}}$ 为两个用户共享的波束方向；对于 RSMA，$\alpha$ 是分配给公有信息波束的功率，$\beta$ 是将剩余功率$1-\alpha$ 分配给 ${\mathbf{v}}_1$ 和 ${\mathbf{v}}_2$ 间的功率，$\gamma$ 是分配给user1的公有信息速率系数，$1-\gamma$ 是分配给user2的公有信息速率系数；对于 NG-NOMA，其变量设置与 SDMA 类似，即 $\alpha$ 作为功率分配因子，${\mathbf{v}}_1$ 和 ${\mathbf{v}}_2$ 为归一化波束向量。所有参数均满足以下约束：$\alpha, \beta, \gamma \in [0, 1]$，且${\mathbf{v}}_c,{\mathbf{v}}_1,{\mathbf{v}}_2$ 的模恒为1。在实验仿真中，$\alpha, \beta, \gamma$ 均采用固定步长进行均匀采样，而 ${\mathbf{v}}_c, {\mathbf{v}}_1, {\mathbf{v}}_2$ 则通过在复高斯圆域中采样后归一化获得。由于 RSMA 的设计自由度远大于其他技术，导致其采样空间维度较高，进而在计算资源有限的情况下难以实现充分的参数遍历。这也可能导致 RSMA 的仿真性能与其理论性能存在一定偏差，实验结果未能完全反映其潜在的最优表现。**
 
 **仿真特殊设定：在传统的 SISO NOMA 系统中，基站通常通过估计用户的信道增益来判断用户间的强弱关系，即基于信道质量将用户划分为“强用户”与“弱用户”。然而，在 MISO NOMA 系统中，用户强弱的判断不仅依赖于信道质量，还需综合考虑波束方向与空间特性。具体而言，尽管在某些情况下 User 1 的信道质量优于 User 2，但若波束主要指向 User 2，则实际接收信号强度可能使得 User 1 不再是“强用户”。为更准确反映实际通信情形，本文在 Group NOMA 仿真中引入了一个动态判定模块，该模块根据当前信道状态和波束方向联合判断谁为“强用户”，并据此生成相应的压缩编码信号。如图 2、图 6 和图 10 所示，图中新增的红色点表示系统在判定 User 2 为强用户时对应的两用户速率组合；相应地，蓝色点表示系统在判定 User 1 为强用户 时的速率结果。这一设置能够更全面地刻画 Group NOMA 在不同判定条件下的性能表现。相比之下，在 Non-group NOMA 的仿真中，并未引入类似的判定机制，而是始终假设 User 1 为强用户。其原因有二：一方面，由于 Non-group NOMA 不采用明确的用户分组与共享波束设计，强弱用户判定机制的引入较为复杂，难以实现；另一方面，从图 2、6 和 10 中可以观察到，在用户信道相关性较强的情况下，红色区域（User 2 为强用户）大多被蓝色区域（User 1 为强用户）所包围，即系统在 User 2 为强用户时的速率组合已被包含在 User 1 为强用户的情况中。因此，在对比各技术的性能时，我们主要关注系统所能达到的速率区域上界，故可合理忽略 User 2 为强用户的情况。（这两个原因是我自己的理解，待证实）**
 
@@ -402,6 +402,7 @@ RSMA 表现出极高的灵活性：在用户信道相关性弱时，可退化为
 
 ## 4. Conclusion
 能肯定的是，SDMA严格受用户信道相关性影响，在信道相关性弱时能表现出很不错的性能，反之，非常差；group NOMA也受信道相关性的影响但是似乎没有SDMA敏感，group NOMA在信道相关性强时表现更好，而且用户信道大尺度衰落差距大时group NOMA的性能才能真正被凸显出来。不能肯定的是，通过现有的理解和分析，个人仍然无法给出本文所要探讨的问题的答案，无法准确的说出RSMA/NOMA/SDMA到底哪个技术更强。non-group NOMA和RSMA都是比较稳健的方法，可能更能适应当下复杂的通信环境。但non-group NOMA的可行性可能比RSMA更低，因为他依赖强用户执行K-1次SIC，受SIC error propagation的影响可能会严重削弱non-group NOMA的性能。所以，综上所述，RSMA可能更能胜任未来mmWave通信，当然RSMA也存在明显的弊端，就是基站在发送接收信号时复杂度会比较高。
+
 
 
 
